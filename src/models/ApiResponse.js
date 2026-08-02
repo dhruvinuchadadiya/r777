@@ -15,6 +15,6 @@ export function toApiResult(raw = {}) {
   return {
     success: raw.Success ?? raw.success ?? true,
     data: raw.Data ?? raw.data ?? raw,
-    message: raw.Message ?? raw.message ?? '',
+    message: raw.Message ?? raw.message ?? "",
   };
 }

@@ -1,28 +1,28 @@
 export const heroBanners = [
   {
     id: 1,
-    desktop: "https://images.staticcontent.io/rde/login/main-banner0.webp",
-    mobile: "https://images.staticcontent.io/rde/login/main-banner-mobile0.webp",
+    desktop: "/images/hero/main-banner0.webp",
+    mobile: "/images/hero/main-banner-mobile0.webp",
     title: "OWN THE GAME.",
     subtitle: "WIN WITHOUT LIMITS.",
-    sports: ["Cricket", "Football", "Tennis", "Basketball", "MMA"]
+    sports: ["Cricket", "Football", "Tennis", "Basketball", "MMA"],
   },
   {
     id: 2,
-    desktop: "https://images.staticcontent.io/rde/login/main-banner1.webp",
-    mobile: "https://images.staticcontent.io/rde/login/main-banner-mobile1.webp",
+    desktop: "/images/hero/main-banner1.webp",
+    mobile: "/images/hero/main-banner-mobile1.webp",
     title: "LIVE BETTING",
     subtitle: "REAL-TIME ACTION",
-    sports: ["Cricket", "Football", "Tennis", "Basketball", "MMA"]
+    sports: ["Cricket", "Football", "Tennis", "Basketball", "MMA"],
   },
   {
     id: 3,
-    desktop: "https://images.staticcontent.io/rde/login/main-banner2.webp",
-    mobile: "https://images.staticcontent.io/rde/login/main-banner-mobile2.webp",
+    desktop: "/images/hero/main-banner2.webp",
+    mobile: "/images/hero/main-banner-mobile2.webp",
     title: "BIG WINS",
     subtitle: "AWAIT YOU",
-    sports: ["Cricket", "Football", "Tennis", "Basketball", "MMA"]
-  }
+    sports: ["Cricket", "Football", "Tennis", "Basketball", "MMA"],
+  },
 ];
 
 export const promoCards = [
@@ -31,70 +31,70 @@ export const promoCards = [
     title: "HIT THE SIX",
     subtitle: "BOWL THEM OUT\nCHASE THE SCORE",
     category: "Cricket",
-    icon: "cricket"
+    icon: "cricket",
   },
   {
     id: 2,
     title: "SPIN TO WIN!",
     subtitle: "JACKPOT FEVER!\nHIT THE SLOTS!",
     category: "Slot",
-    icon: "slot"
+    icon: "slot",
   },
   {
     id: 3,
     title: "SMASH THE ACE",
     subtitle: "RALLY TO WIN!\nGAME SET MATCH!",
     category: "Tennis",
-    icon: "tennis"
-  }
+    icon: "tennis",
+  },
 ];
 
 export const topGames = [
   {
     id: 1,
-    image: "https://images.staticcontent.io/casino/without-login/topgame/topgame1.webp",
-    name: "Aviator"
+    image: "/images/topgames/topgame1.webp",
+    name: "Aviator",
   },
   {
     id: 2,
-    image: "https://images.staticcontent.io/casino/without-login/topgame/topgame2.webp",
-    name: "Crazy Time"
+    image: "/images/topgames/topgame2.webp",
+    name: "Crazy Time",
   },
   {
     id: 3,
-    image: "https://images.staticcontent.io/casino/without-login/topgame/topgame3.webp",
-    name: "Teen Patti"
+    image: "/images/topgames/topgame3.webp",
+    name: "Teen Patti",
   },
   {
     id: 4,
-    image: "https://images.staticcontent.io/casino/without-login/topgame/topgame4.webp",
-    name: "Andar Bahar"
+    image: "/images/topgames/topgame4.webp",
+    name: "Andar Bahar",
   },
   {
     id: 5,
-    image: "https://images.staticcontent.io/casino/without-login/topgame/topgame5.webp",
-    name: "Dragon Tiger"
+    image: "/images/topgames/topgame5.webp",
+    name: "Dragon Tiger",
   },
   {
     id: 6,
-    image: "https://images.staticcontent.io/casino/without-login/topgame/topgame6.webp",
-    name: "Roulette"
+    image: "/images/topgames/topgame6.webp",
+    name: "Roulette",
   },
   {
     id: 7,
-    image: "https://images.staticcontent.io/casino/without-login/topgame/topgame7.webp",
-    name: "Baccarat"
+    image: "/images/topgames/topgame7.webp",
+    name: "Baccarat",
   },
   {
     id: 8,
-    image: "https://images.staticcontent.io/casino/without-login/topgame/topgame8.webp",
-    name: "Blackjack"
+    image: "/images/topgames/topgame8.webp",
+    name: "Blackjack",
   },
   {
     id: 9,
-    image: "https://images.staticcontent.io/casino/without-login/topgame/topgame9.webp",
-    name: "Poker"
-  }
+    image: "/images/topgames/topgame9.webp",
+    name: "Poker",
+  },
 ];
 
 export const cricketMatches = [
@@ -108,8 +108,8 @@ export const cricketMatches = [
     odds: {
       team1: [450, 0],
       draw: [625, 0],
-      team2: [550, 0]
-    }
+      team2: [550, 0],
+    },
   },
   {
     id: 2,
@@ -119,8 +119,8 @@ export const cricketMatches = [
     team2: "Yorkshire",
     odds: {
       team1: [2.84, 2.98],
-      team2: [1.51, 1.54]
-    }
+      team2: [1.51, 1.54],
+    },
   },
   {
     id: 3,
@@ -130,8 +130,8 @@ export const cricketMatches = [
     team2: "Middlesex",
     odds: {
       team1: [1.5, 1.64],
-      team2: [2.56, 3]
-    }
+      team2: [2.56, 3],
+    },
   },
   {
     id: 4,
@@ -141,8 +141,8 @@ export const cricketMatches = [
     team2: "Northamptonshire",
     odds: {
       team1: [1.92, 1.93],
-      team2: [2.06, 2.08]
-    }
+      team2: [2.06, 2.08],
+    },
   },
   {
     id: 5,
@@ -152,8 +152,8 @@ export const cricketMatches = [
     team2: "Leicestershire",
     odds: {
       team1: [2.3, 2.36],
-      team2: [1.74, 1.76]
-    }
+      team2: [1.74, 1.76],
+    },
   },
   {
     id: 6,
@@ -163,9 +163,9 @@ export const cricketMatches = [
     team2: "Derbyshire",
     odds: {
       team1: [1.6, 1.74],
-      team2: [2.36, 2.68]
-    }
-  }
+      team2: [2.36, 2.68],
+    },
+  },
 ];
 
 export const soccerMatches = [
@@ -178,9 +178,9 @@ export const soccerMatches = [
     odds: {
       team1: [1.96, 1.98],
       draw: [3.95, 4],
-      team2: [4, 4.2]
-    }
-  }
+      team2: [4, 4.2],
+    },
+  },
 ];
 
 export const tennisMatches = [
@@ -194,8 +194,8 @@ export const tennisMatches = [
     hasBM: true,
     odds: {
       player1: [2.96, 2.98],
-      player2: [1.5, 1.51]
-    }
+      player2: [1.5, 1.51],
+    },
   },
   {
     id: 2,
@@ -207,8 +207,8 @@ export const tennisMatches = [
     hasBM: true,
     odds: {
       player1: [1.66, 1.68],
-      player2: [2.46, 2.5]
-    }
+      player2: [2.46, 2.5],
+    },
   },
   {
     id: 3,
@@ -220,8 +220,8 @@ export const tennisMatches = [
     hasBM: true,
     odds: {
       player1: [1.58, 1.6],
-      player2: [2.66, 2.7]
-    }
+      player2: [2.66, 2.7],
+    },
   },
   {
     id: 4,
@@ -233,8 +233,8 @@ export const tennisMatches = [
     hasBM: true,
     odds: {
       player1: [2.46, 2.5],
-      player2: [1.67, 1.69]
-    }
+      player2: [1.67, 1.69],
+    },
   },
   {
     id: 5,
@@ -246,8 +246,8 @@ export const tennisMatches = [
     hasBM: true,
     odds: {
       player1: [3.15, 3.25],
-      player2: [1.44, 1.46]
-    }
+      player2: [1.44, 1.46],
+    },
   },
   {
     id: 6,
@@ -259,50 +259,50 @@ export const tennisMatches = [
     hasBM: true,
     odds: {
       player1: [4.1, 4.3],
-      player2: [1.3, 1.32]
-    }
-  }
+      player2: [1.3, 1.32],
+    },
+  },
 ];
 
 export const gameProviders = [
   {
     id: 1,
     name: "Evolution",
-    logo: "https://images.staticcontent.io/casino/banner/loginimages/evolution.png"
+    logo: "/images/providers/evolution.png",
   },
   {
     id: 2,
     name: "Ezugi",
-    logo: "https://images.staticcontent.io/casino/banner/loginimages/ezugi.png"
+    logo: "/images/providers/ezugi.png",
   },
   {
     id: 3,
     name: "Pragmatic Live",
-    logo: "https://images.staticcontent.io/casino/banner/loginimages/pragmatic-live.png"
+    logo: "/images/providers/pragmatic-live.png",
   },
   {
     id: 4,
     name: "Betgames",
-    logo: "https://images.staticcontent.io/casino/banner/loginimages/betgames.png"
+    logo: "/images/providers/betgames.png",
   },
   {
     id: 5,
     name: "Super Spade Games",
-    logo: "https://images.staticcontent.io/casino/banner/loginimages/ssg.png"
+    logo: "/images/providers/ssg.png",
   },
   {
     id: 6,
     name: "Betsoft",
-    logo: "https://images.staticcontent.io/casino/banner/loginimages/betsoft.png"
+    logo: "/images/providers/betsoft.png",
   },
   {
     id: 7,
     name: "Spribe",
-    logo: "https://images.staticcontent.io/casino/banner/loginimages/spribe.png"
+    logo: "/images/providers/spribe.png",
   },
   {
     id: 8,
     name: "Evoplay",
-    logo: "https://images.staticcontent.io/casino/banner/loginimages/Evoplay.png"
-  }
+    logo: "/images/providers/Evoplay.png",
+  },
 ];
