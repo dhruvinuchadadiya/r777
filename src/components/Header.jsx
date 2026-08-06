@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import {
   Menu,
@@ -24,6 +24,9 @@ const Header = () => {
   const [selectedLang, setSelectedLang] = useState("EN");
   const { user, isAuthenticated, logout } = useAuth();
 
+  // 📍 GET CURRENT ROUTE PATH
+  const location = useLocation();
+
   // 🔒 LOCK BACKGROUND SCROLL WHEN MOBILE MENU IS OPEN
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -43,7 +46,7 @@ const Header = () => {
   ];
 
   const navItems = [
-    { name: "Home", path: "/", highlight: true },
+    { name: "Home", path: "/" },
     { name: "In-Play", path: "/in-play" },
     { name: "Hundred Cup", path: "/hundred-cup", badge: "0" },
     { name: "Cricket", path: "/cricket", badge: "0" },
@@ -99,31 +102,34 @@ const Header = () => {
             {/* 2. MIDDLE SECTION: Desktop Scrollable Nav */}
             <div className="hidden md:flex items-center flex-1 min-w-0 mx-2 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
               <div className="flex items-center space-x-1 flex-nowrap mx-auto">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={`whitespace-nowrap px-2.5 py-1.5 rounded text-xs xl:text-sm font-medium transition shrink-0 flex items-center space-x-1.5 ${
-                      item.highlight
-                        ? "bg-[#34D399] text-white"
-                        : "text-white hover:bg-[#0D6F7E]"
-                    }`}
-                  >
-                    {item.icon && (
-                      <img
-                        src={item.icon}
-                        alt={item.name}
-                        className="w-3.5 h-3.5 xl:w-4 xl:h-4 shrink-0"
-                      />
-                    )}
-                    <span>{item.name}</span>
-                    {item.badge && (
-                      <span className="ml-1 px-1.5 py-0.2 text-[9px] xl:text-[10px] bg-red-500 text-white rounded-full font-bold uppercase shrink-0">
-                        {item.badge}
-                      </span>
-                    )}
-                  </Link>
-                ))}
+                {navItems.map((item) => {
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className={`whitespace-nowrap px-2.5 py-1.5 rounded text-xs xl:text-sm font-medium transition shrink-0 flex items-center space-x-1.5 ${
+                        isActive
+                          ? "bg-[#34D399] text-white"
+                          : "text-white hover:bg-[#0D6F7E]"
+                      }`}
+                    >
+                      {item.icon && (
+                        <img
+                          src={item.icon}
+                          alt={item.name}
+                          className="w-3.5 h-3.5 xl:w-4 xl:h-4 shrink-0"
+                        />
+                      )}
+                      <span>{item.name}</span>
+                      {item.badge && (
+                        <span className="ml-1 px-1.5 py-0.2 text-[9px] xl:text-[10px] bg-red-500 text-white rounded-full font-bold uppercase shrink-0">
+                          {item.badge}
+                        </span>
+                      )}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
 
@@ -263,34 +269,37 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="md:hidden fixed inset-x-0 top-[121px] bottom-0 bg-[#0D6F7E] border-t border-[#0B5563] overflow-y-auto z-50">
             <nav className="flex flex-col space-y-1 p-4 pb-24">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`flex items-center justify-between px-4 py-3 rounded text-sm font-medium transition ${
-                    item.highlight
-                      ? "bg-[#34D399] text-white"
-                      : "text-white hover:bg-[#0B5563]"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <div className="flex items-center space-x-2">
-                    {item.icon && (
-                      <img
-                        src={item.icon}
-                        alt={item.name}
-                        className="w-4 h-4 shrink-0"
-                      />
+              {navItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`flex items-center justify-between px-4 py-3 rounded text-sm font-medium transition ${
+                      isActive
+                        ? "bg-[#34D399] text-white"
+                        : "text-white hover:bg-[#0B5563]"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <div className="flex items-center space-x-2">
+                      {item.icon && (
+                        <img
+                          src={item.icon}
+                          alt={item.name}
+                          className="w-4 h-4 shrink-0"
+                        />
+                      )}
+                      <span>{item.name}</span>
+                    </div>
+                    {item.badge && (
+                      <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">
+                        {item.badge}
+                      </span>
                     )}
-                    <span>{item.name}</span>
-                  </div>
-                  {item.badge && (
-                    <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">
-                      {item.badge}
-                    </span>
-                  )}
-                </Link>
-              ))}
+                  </Link>
+                );
+              })}
 
               {isAuthenticated ? (
                 <div className="mt-4 space-y-2 pt-2 border-t border-[#0B5563]">
