@@ -24,14 +24,12 @@ export const authService = {
 
     const { data } = await client.post(ENDPOINTS.AUTH.LOGIN, payload);
 
-    // No explicit success flag in this response — presence of ID means success.
     if (!data?.ID) {
       throw new Error("Login failed");
     }
 
-    const user = toUser(data);
+    const user = toUser(data, { username });
 
-    // Best-effort: treat Captcha as the session token until confirmed with backend.
     if (user.sessionToken) {
       setAccessToken(user.sessionToken);
     }
@@ -39,5 +37,28 @@ export const authService = {
     return user;
   },
 
-  // signUp/logout/fetchCurrentUser unchanged for now — still unconfirmed shapes
+  async signUp(formPayload) {
+    const { data } = await client.post(ENDPOINTS.AUTH.REGISTER, formPayload);
+    if (!data?.ID) {
+      throw new Error("Registration failed");
+    }
+    const user = toUser(data, {
+      username: formPayload.UName ?? formPayload.username,
+    });
+    if (user.sessionToken) {
+      setAccessToken(user.sessionToken);
+    }
+    return user;
+  },
+
+  async logout() {
+    // Endpoint unconfirmed — wrapped so a missing/failing endpoint doesn't block local logout
+    await client.post(ENDPOINTS.AUTH.LOGOUT);
+  },
+
+  async fetchCurrentUser() {
+    // Endpoint unconfirmed — only used if you later confirm a real "who am I" endpoint exists
+    const { data } = await client.get(ENDPOINTS.AUTH.ME);
+    return toUser(data);
+  },
 };

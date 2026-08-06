@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { API_BASE_URL, ENDPOINTS } from '../config/endpoints';
+import axios from "axios";
+import { API_BASE_URL, ENDPOINTS } from "../config/endpoints";
 
 const client = axios.create({
   baseURL: API_BASE_URL,
@@ -7,7 +7,9 @@ const client = axios.create({
 });
 
 let accessToken = null;
-export const setAccessToken = (token) => { accessToken = token; };
+export const setAccessToken = (token) => {
+  accessToken = token;
+};
 export const getAccessToken = () => accessToken;
 
 client.interceptors.request.use((config) => {
@@ -23,7 +25,11 @@ client.interceptors.response.use(
   (response) => response,
   async (error) => {
     const original = error.config;
-    if (error.response?.status === 401 && !original._retry && original.url !== ENDPOINTS.AUTH.REFRESH) {
+    if (
+      error.response?.status === 401 &&
+      !original._retry &&
+      original.url !== ENDPOINTS.AUTH.REFRESH
+    ) {
       original._retry = true;
       try {
         refreshPromise = refreshPromise || client.post(ENDPOINTS.AUTH.REFRESH);
@@ -34,12 +40,12 @@ client.interceptors.response.use(
         return client(original);
       } catch (refreshError) {
         setAccessToken(null);
-        window.dispatchEvent(new Event('auth:logout'));
+        window.dispatchEvent(new Event("auth:logout"));
         return Promise.reject(refreshError);
       }
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default client;

@@ -1,44 +1,79 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { authService } from "../services/authService";
+import { setAccessToken } from "../api/client";
+import { STORAGE_KEYS } from "../constants/storageKeys";
 
 const AuthContext = createContext(null);
+
+// Only ever read/write NON-sensitive display fields here.
+// Never store sessionToken or any credential in sessionStorage/localStorage.
+const readStoredUser = () => {
+  try {
+    const raw = sessionStorage.getItem(STORAGE_KEYS.USER);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+};
+
+const writeStoredUser = (user) => {
+  try {
+    if (!user) {
+      sessionStorage.removeItem(STORAGE_KEYS.USER);
+      return;
+    }
+    const { sessionToken, ...safeUser } = user; // strip the token before persisting
+    sessionStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(safeUser));
+  } catch {
+    // sessionStorage may be unavailable (private browsing etc.) — fail silently
+  }
+};
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      try {
-        setUser(await authService.fetchCurrentUser());
-      } catch {
-        setUser(null);
-      } finally {
-        setLoading(false);
-      }
-    })();
+    // Stopgap: restore display-only state from sessionStorage until a real
+    // /auth/Me endpoint is confirmed with the backend team.
+    const stored = readStoredUser();
+    if (stored) {
+      setUser(stored);
+    }
+    setLoading(false);
 
-    const handleLogout = () => setUser(null);
-    window.addEventListener("auth:logout", handleLogout);
-    return () => window.removeEventListener("auth:logout", handleLogout);
+    const handleForcedLogout = () => {
+      setUser(null);
+      writeStoredUser(null);
+    };
+    window.addEventListener("auth:logout", handleForcedLogout);
+    return () => window.removeEventListener("auth:logout", handleForcedLogout);
   }, []);
 
   const login = async (username, password) => {
-    const u = await authService.login(username, password);
-    setUser(u);
-    return u;
+    const loggedInUser = await authService.login(username, password);
+    setUser(loggedInUser);
+    writeStoredUser(loggedInUser);
+    return loggedInUser;
   };
 
   const signUp = async (payload) => {
-    const u = await authService.signUp(payload);
-    setUser(u);
-    return u;
+    const newUser = await authService.signUp(payload);
+    setUser(newUser);
+    writeStoredUser(newUser);
+    return newUser;
   };
 
   const logout = async () => {
-    await authService.logout();
-    setAccessToken(null);
-    setUser(null);
+    try {
+      await authService.logout();
+    } catch (err) {
+      console.error("Logout request failed:", err);
+    } finally {
+      setAccessToken(null);
+      setUser(null);
+      writeStoredUser(null);
+    }
   };
 
   return (
