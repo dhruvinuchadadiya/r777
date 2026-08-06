@@ -1,14 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-import { Menu, X } from "lucide-react";
 import LoginDialog from "./LoginDialog";
 import SignUpDialog from "./SignUpDialog";
+import { useAuth } from "../context/AuthContext";
+import {
+  Menu,
+  X,
+  Coins,
+  User as UserIcon,
+  LogOut,
+  ChevronDown,
+} from "lucide-react";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const [signUpOpen, setSignUpOpen] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const { user, isAuthenticated, logout } = useAuth();
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState("EN");
+  const languages = [
+    { code: "EN", flag: "/images/flags/in.png" },
+    { code: "US", flag: "/images/flags/us.png" },
+    { code: "CA", flag: "/images/flags/ca.png" },
+  ];
 
   const navItems = [
     { name: "Home", path: "/", highlight: true },
@@ -62,23 +79,47 @@ const Header = () => {
               </span>
             </Link>
 
-            {/* Language Flags - Desktop */}
-            <div className="hidden md:flex items-center space-x-3 ml-8">
+            {/* Language Dropdown - Desktop */}
+            <div className="hidden md:block relative ml-8">
+              <button
+                onClick={() => setLangMenuOpen(!langMenuOpen)}
+                className="flex items-center space-x-2 bg-[#0D6F7E] hover:bg-[#0f7e8f] border border-[#2a95a8] rounded-full pl-2 pr-3 py-1.5 transition"
+              >
               <img
-                src="/images/flags/in.png"
-                alt="India"
-                className="w-8 h-6 cursor-pointer hover:opacity-80 transition"
+                  src={languages.find((l) => l.code === selectedLang)?.flag}
+                  alt={selectedLang}
+                  className="w-6 h-4 rounded-sm"
+                />
+                <span className="text-white text-sm font-medium">
+                  {selectedLang}
+                </span>
+                <ChevronDown
+                  size={14}
+                  className={`text-white transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
               />
+              </button>
+
+              {langMenuOpen && (
+                <div className="absolute left-0 mt-2 w-36 bg-[#1a1a2e] border border-[#0B5563] rounded-lg shadow-xl overflow-hidden z-50">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setSelectedLang(lang.code);
+                        setLangMenuOpen(false);
+                      }}
+                      className="w-full flex items-center space-x-2 px-3 py-2.5 text-sm text-white hover:bg-[#2d2d44] transition"
+                    >
               <img
-                src="/images/flags/us.png"
-                alt="USA"
-                className="w-8 h-6 cursor-pointer hover:opacity-80 transition"
+                        src={lang.flag}
+                        alt={lang.code}
+                        className="w-6 h-4 rounded-sm"
               />
-              <img
-                src="/images/flags/ca.png"
-                alt="Canada"
-                className="w-8 h-6 cursor-pointer hover:opacity-80 transition"
-              />
+                      <span>{lang.code}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Desktop Navigation */}
