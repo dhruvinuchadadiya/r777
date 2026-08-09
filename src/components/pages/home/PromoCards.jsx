@@ -1,28 +1,63 @@
-import React from 'react';
-import { ChevronRight } from 'lucide-react';
-import { promoCards } from '../mockData';
+import React from "react";
+import { ChevronRight } from "lucide-react";
+import { promoCards } from "../../../mockData";
 
 const PromoCards = () => {
   const getIcon = (iconType) => {
     const icons = {
       cricket: (
-        <svg className="w-20 h-20 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="12" cy="12" r="10" strokeWidth="2"/>
-          <path d="M12 2 L12 22 M2 12 L22 12" strokeWidth="2"/>
+        <svg
+          className="w-20 h-20 text-white"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <circle cx="12" cy="12" r="10" strokeWidth="2" />
+          <path d="M12 2 L12 22 M2 12 L22 12" strokeWidth="2" />
         </svg>
       ),
       slot: (
-        <svg className="w-20 h-20 text-white" viewBox="0 0 24 24" fill="currentColor">
-          <rect x="4" y="2" width="16" height="20" rx="2" fill="currentColor" opacity="0.9"/>
-          <text x="12" y="14" fontSize="14" textAnchor="middle" fill="white" fontWeight="bold">777</text>
+        <svg
+          className="w-20 h-20 text-white"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <rect
+            x="4"
+            y="2"
+            width="16"
+            height="20"
+            rx="2"
+            fill="currentColor"
+            opacity="0.9"
+          />
+          <text
+            x="12"
+            y="14"
+            fontSize="14"
+            textAnchor="middle"
+            fill="white"
+            fontWeight="bold"
+          >
+            777
+          </text>
         </svg>
       ),
       tennis: (
-        <svg className="w-20 h-20 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="12" cy="12" r="9" strokeWidth="2"/>
-          <path d="M12 3 Q18 12 12 21 M12 3 Q6 12 12 21" strokeWidth="2" fill="none"/>
+        <svg
+          className="w-20 h-20 text-white"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <circle cx="12" cy="12" r="9" strokeWidth="2" />
+          <path
+            d="M12 3 Q18 12 12 21 M12 3 Q6 12 12 21"
+            strokeWidth="2"
+            fill="none"
+          />
         </svg>
-      )
+      ),
     };
     return icons[iconType];
   };
@@ -57,9 +92,7 @@ const PromoCards = () => {
                 </div>
               </div>
 
-              <div className="ml-4 flex-shrink-0">
-                {getIcon(card.icon)}
-              </div>
+              <div className="ml-4 flex-shrink-0">{getIcon(card.icon)}</div>
             </div>
 
             {/* Arrow Button */}

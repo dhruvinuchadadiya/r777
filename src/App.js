@@ -1,15 +1,15 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "@/components/Header";
-import HeroCarousel from "@/components/HeroCarousel";
-import PromoCards from "@/components/PromoCards";
-import TopGames from "@/components/TopGames";
-import BettingTables from "@/components/BettingTables";
-import GameProviders from "@/components/GameProviders";
-import Footer from "@/components/Footer";
-import MobileBottomNav from "@/components/MobileBottomNav";
+import Header from "./components/layout/Header";
+import HeroCarousel from "./components/pages/home/HeroCarousel";
+import PromoCards from "./components/pages/home/PromoCards";
+import TopGames from "./components/pages/home/TopGames";
+import BettingTables from "./components/pages/home/BettingTables";
+import GameProviders from "./components/pages/home/GameProviders";
+import Footer from "./components/layout/Footer";
+import MobileBottomNav from "./components/layout/MobileBottomNav";
 import { AuthProvider } from "./context/AuthContext";
-import InPlayPage from "@/components/InPlayPage"; // adjust path if it's in components/ or pages/
+import InPlayPage from "./components/pages/InPlay"; // adjust path if it's in components/ or pages/
 
 const HomePage = () => {
   return (

@@ -13,7 +13,7 @@ import {
   CheckSquare,
   LogOut,
 } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 const menuItems = [
   { name: "Account Statement", path: "/account-statement", icon: FileText },

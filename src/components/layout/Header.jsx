@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import {
   Menu,
   X,
@@ -10,10 +10,10 @@ import {
   ChevronDown,
   Bell,
 } from "lucide-react";
-import LoginDialog from "./LoginDialog";
-import SignUpDialog from "./SignUpDialog";
-import { useAuth } from "../context/AuthContext";
-import { getSportLiveCount, getTotalLiveCount } from "../data/liveMatches";
+import LoginDialog from "../layout/LoginDialog";
+import SignUpDialog from "../layout/SignUpDialog";
+import { useAuth } from "../../context/AuthContext";
+import { getSportLiveCount, getTotalLiveCount } from "../../data/liveMatches";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

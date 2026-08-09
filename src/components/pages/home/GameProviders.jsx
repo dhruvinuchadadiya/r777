@@ -1,5 +1,5 @@
-import React from 'react';
-import { gameProviders } from '../mockData';
+import React from "react";
+import { gameProviders } from "../../../mockData";
 
 const GameProviders = () => {
   return (
@@ -63,9 +63,10 @@ const GameProviders = () => {
         {/* Disclaimer */}
         <div className="text-center text-gray-400 text-sm max-w-3xl mx-auto">
           <p>
-            You must be over 18 years old, or the legal age at which gambling or gaming
-            activities are allowed under the law or jurisdiction that applies to you. You
-            must reside in a country in which access to online gambling to its residents.
+            You must be over 18 years old, or the legal age at which gambling or
+            gaming activities are allowed under the law or jurisdiction that
+            applies to you. You must reside in a country in which access to
+            online gambling to its residents.
           </p>
         </div>
       </div>

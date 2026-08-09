@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { heroBanners } from '../mockData';
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { heroBanners } from "../../../mockData";
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,7 +13,9 @@ const HeroCarousel = () => {
   }, []);
 
   const goToPrevious = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroBanners.length) % heroBanners.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + heroBanners.length) % heroBanners.length,
+    );
   };
 
   const goToNext = () => {
@@ -34,10 +36,13 @@ const HeroCarousel = () => {
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {heroBanners.map((banner, index) => (
-              <div key={banner.id} className="min-w-full h-full relative flex items-center justify-center">
+              <div
+                key={banner.id}
+                className="min-w-full h-full relative flex items-center justify-center"
+              >
                 {/* Background with overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-900/40 via-blue-900/40 to-cyan-900/40"></div>
-                
+
                 {/* Content */}
                 <div className="relative z-10 container mx-auto px-4 flex items-center justify-between">
                   <div className="max-w-2xl">
@@ -50,7 +55,9 @@ const HeroCarousel = () => {
                       {banner.sports.map((sport, idx) => (
                         <React.Fragment key={sport}>
                           <span className="font-medium">{sport}</span>
-                          {idx < banner.sports.length - 1 && <span className="text-cyan-400">•</span>}
+                          {idx < banner.sports.length - 1 && (
+                            <span className="text-cyan-400">•</span>
+                          )}
                         </React.Fragment>
                       ))}
                     </div>
@@ -58,7 +65,7 @@ const HeroCarousel = () => {
                       BET NOW
                     </button>
                   </div>
-                  
+
                   {/* Athletes Image Placeholder */}
                   <div className="hidden lg:block">
                     <div className="w-[500px] h-[400px] relative">
@@ -97,7 +104,7 @@ const HeroCarousel = () => {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-3 h-3 rounded-full transition ${
-                index === currentSlide ? 'bg-white' : 'bg-white/40'
+                index === currentSlide ? "bg-white" : "bg-white/40"
               }`}
             />
           ))}
@@ -112,7 +119,10 @@ const HeroCarousel = () => {
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {heroBanners.map((banner) => (
-              <div key={banner.id} className="min-w-full h-full relative flex items-center justify-center">
+              <div
+                key={banner.id}
+                className="min-w-full h-full relative flex items-center justify-center"
+              >
                 <div className="absolute inset-0 bg-gradient-to-b from-purple-900/50 to-blue-900/50"></div>
                 <div className="relative z-10 container mx-auto px-4 text-center">
                   <h1 className="text-4xl font-black text-white mb-3 leading-tight">
@@ -144,7 +154,7 @@ const HeroCarousel = () => {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-2 h-2 rounded-full transition ${
-                index === currentSlide ? 'bg-white' : 'bg-white/40'
+                index === currentSlide ? "bg-white" : "bg-white/40"
               }`}
             />
           ))}

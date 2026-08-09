@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { topGames } from '../mockData';
+import React, { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { topGames } from "../../../mockData";
 
 const TopGames = () => {
   const scrollContainerRef = useRef(null);
@@ -9,8 +9,8 @@ const TopGames = () => {
     if (scrollContainerRef.current) {
       const scrollAmount = 300;
       scrollContainerRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
       });
     }
   };
@@ -22,13 +22,13 @@ const TopGames = () => {
           <h2 className="text-white text-3xl font-bold">Top Games</h2>
           <div className="flex space-x-2">
             <button
-              onClick={() => scroll('left')}
+              onClick={() => scroll("left")}
               className="bg-[#0B5563] hover:bg-[#0D6F7E] text-white p-2 rounded-full transition"
             >
               <ChevronLeft size={24} />
             </button>
             <button
-              onClick={() => scroll('right')}
+              onClick={() => scroll("right")}
               className="bg-[#0B5563] hover:bg-[#0D6F7E] text-white p-2 rounded-full transition"
             >
               <ChevronRight size={24} />
@@ -39,7 +39,7 @@ const TopGames = () => {
         <div
           ref={scrollContainerRef}
           className="flex space-x-4 overflow-x-auto scrollbar-hide scroll-smooth"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {topGames.map((game) => (
             <div
@@ -58,7 +58,9 @@ const TopGames = () => {
                   </button>
                 </div>
               </div>
-              <p className="text-white text-center mt-3 font-medium">{game.name}</p>
+              <p className="text-white text-center mt-3 font-medium">
+                {game.name}
+              </p>
             </div>
           ))}
         </div>

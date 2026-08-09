@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home, Flame, Gamepad2, Menu } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import AccountDrawer from "./AccountDrawer";
 
 const MobileBottomNav = () => {
