@@ -9,6 +9,7 @@ import GameProviders from "@/components/GameProviders";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import { AuthProvider } from "./context/AuthContext";
+import InPlayPage from "@/components/InPlayPage"; // adjust path if it's in components/ or pages/
 
 const HomePage = () => {
   return (
@@ -19,6 +20,17 @@ const HomePage = () => {
       <TopGames />
       <BettingTables />
       <GameProviders />
+      <Footer />
+      <MobileBottomNav />
+    </div>
+  );
+};
+
+const PageLayout = ({ children }) => {
+  return (
+    <div className="min-h-screen bg-[#0f0f1e] text-white flex flex-col justify-between">
+      <Header />
+      <main className="flex-1">{children}</main>
       <Footer />
       <MobileBottomNav />
     </div>
@@ -48,7 +60,11 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route
               path="/in-play"
-              element={<PlaceholderPage title="In-Play" />}
+              element={
+                <PageLayout>
+                  <InPlayPage />
+                </PageLayout>
+              }
             />
             <Route
               path="/hundred-cup"

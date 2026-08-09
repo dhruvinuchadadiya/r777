@@ -24,10 +24,9 @@ const Header = () => {
   const [selectedLang, setSelectedLang] = useState("EN");
   const { user, isAuthenticated, logout } = useAuth();
 
-  // 📍 GET CURRENT ROUTE PATH
   const location = useLocation();
 
-  // 🔒 LOCK BACKGROUND SCROLL WHEN MOBILE MENU IS OPEN
+  // Lock scroll on mobile menu toggle
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -87,7 +86,7 @@ const Header = () => {
       <header className="bg-[#0B5563] shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3 w-full gap-2 md:gap-4">
-            {/* 1. LEFT SECTION: Logo */}
+            {/* 1. Logo */}
             <div className="flex items-center shrink-0">
               <Link to="/" className="flex items-center space-x-2">
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0">
@@ -99,19 +98,19 @@ const Header = () => {
               </Link>
             </div>
 
-            {/* 2. MIDDLE SECTION: Desktop Scrollable Nav */}
+            {/* 2. Desktop Navigation */}
             <div className="hidden md:flex items-center flex-1 min-w-0 mx-2 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-              <div className="flex items-center space-x-1 flex-nowrap mx-auto">
+              <div className="flex items-center space-x-1.5 flex-nowrap mx-auto">
                 {navItems.map((item) => {
                   const isActive = location.pathname === item.path;
                   return (
                     <Link
                       key={item.name}
                       to={item.path}
-                      className={`whitespace-nowrap px-2.5 py-1.5 rounded text-xs xl:text-sm font-medium transition shrink-0 flex items-center space-x-1.5 ${
+                      className={`whitespace-nowrap px-3 py-1.5 rounded-md text-xs xl:text-sm font-semibold transition-all duration-200 shrink-0 flex items-center space-x-1.5 ${
                         isActive
-                          ? "bg-[#34D399] text-white"
-                          : "text-white hover:bg-[#0D6F7E]"
+                          ? "bg-[#34D399] text-[#0B5563] shadow-md scale-105"
+                          : "text-white hover:bg-[#34D399]/20 hover:text-[#34D399] hover:border hover:border-[#34D399]/40"
                       }`}
                     >
                       {item.icon && (
@@ -123,7 +122,13 @@ const Header = () => {
                       )}
                       <span>{item.name}</span>
                       {item.badge && (
-                        <span className="ml-1 px-1.5 py-0.2 text-[9px] xl:text-[10px] bg-red-500 text-white rounded-full font-bold uppercase shrink-0">
+                        <span
+                          className={`ml-1 px-1.5 py-0.2 text-[9px] xl:text-[10px] rounded-full font-bold uppercase shrink-0 ${
+                            isActive
+                              ? "bg-[#0B5563] text-white"
+                              : "bg-red-500 text-white"
+                          }`}
+                        >
                           {item.badge}
                         </span>
                       )}
@@ -133,11 +138,10 @@ const Header = () => {
               </div>
             </div>
 
-            {/* 3. RIGHT SECTION: Account & Controls */}
+            {/* 3. Controls & Account */}
             <div className="flex items-center justify-end space-x-2 md:space-x-3 shrink-0 ml-auto">
               {isAuthenticated ? (
                 <div className="flex items-center space-x-2 md:space-x-3">
-                  {/* Wallet Cluster */}
                   <div className="hidden md:flex flex-col space-y-1 shrink-0">
                     <div className="flex items-center justify-center space-x-1.5 bg-gradient-to-b from-[#1a7a8a] to-[#0d5563] border border-[#2a95a8] rounded-full px-3 py-1 shadow-inner">
                       <Coins
@@ -155,7 +159,6 @@ const Header = () => {
                     </div>
                   </div>
 
-                  {/* Right Controls */}
                   <div className="flex flex-col items-end space-y-1 shrink-0">
                     <div className="flex items-center space-x-2">
                       <button className="relative w-9 h-9 flex items-center justify-center bg-gradient-to-b from-[#1a7a8a] to-[#0d5563] border border-[#2a95a8] rounded-full hover:brightness-110 transition shrink-0">
@@ -170,9 +173,9 @@ const Header = () => {
                       <div className="relative">
                         <button
                           onClick={() => setUserMenuOpen(!userMenuOpen)}
-                          className="w-9 h-9 flex items-center justify-center bg-[#34D399] rounded-full hover:brightness-110 transition shrink-0"
+                          className="w-9 h-9 flex items-center justify-center bg-[#34D399] text-[#0B5563] hover:bg-[#34D399]/90 rounded-full transition shrink-0 shadow-md"
                         >
-                          <UserIcon size={18} className="text-white" />
+                          <UserIcon size={18} />
                         </button>
 
                         {userMenuOpen && (
@@ -187,7 +190,7 @@ const Header = () => {
                                 setUserMenuOpen(false);
                                 await logout();
                               }}
-                              className="w-full flex items-center space-x-2 px-4 py-3 text-sm text-red-400 hover:bg-[#2d2d44] transition"
+                              className="w-full flex items-center space-x-2 px-4 py-3 text-sm text-red-400 hover:bg-[#34D399]/15 transition"
                             >
                               <LogOut size={16} />
                               <span>Log Out</span>
@@ -200,7 +203,7 @@ const Header = () => {
                     <div className="relative">
                       <button
                         onClick={() => setLangMenuOpen(!langMenuOpen)}
-                        className="flex items-center space-x-1.5 bg-[#0D6F7E] hover:bg-[#0f7e8f] border border-[#2a95a8] rounded-full px-2.5 py-0.5 transition"
+                        className="flex items-center space-x-1.5 bg-[#0D6F7E] hover:bg-[#34D399]/20 hover:text-[#34D399] border border-[#2a95a8] rounded-full px-2.5 py-0.5 transition"
                       >
                         <img
                           src={
@@ -229,7 +232,7 @@ const Header = () => {
                                 setSelectedLang(lang.code);
                                 setLangMenuOpen(false);
                               }}
-                              className="w-full flex items-center space-x-2 px-3 py-2 text-xs text-white hover:bg-[#2d2d44] transition"
+                              className="w-full flex items-center space-x-2 px-3 py-2 text-xs text-white hover:bg-[#34D399]/20 hover:text-[#34D399] transition"
                             >
                               <img
                                 src={lang.flag}
@@ -254,7 +257,7 @@ const Header = () => {
                 </Button>
               )}
 
-              {/* Mobile Menu Toggle Button */}
+              {/* Mobile Toggle */}
               <button
                 className="md:hidden text-white shrink-0 ml-1 p-1 focus:outline-none"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -265,20 +268,20 @@ const Header = () => {
           </div>
         </div>
 
-        {/* 📱 FIXED & ISOLATED MOBILE MENU OVERLAY */}
+        {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden fixed inset-x-0 top-[121px] bottom-0 bg-[#0D6F7E] border-t border-[#0B5563] overflow-y-auto z-50">
-            <nav className="flex flex-col space-y-1 p-4 pb-24">
+          <div className="md:hidden fixed inset-x-0 top-[112px] bottom-0 bg-[#0D6F7E] border-t border-[#0B5563] overflow-y-auto z-50">
+            <nav className="flex flex-col space-y-1.5 p-4 pb-24">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`flex items-center justify-between px-4 py-3 rounded text-sm font-medium transition ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-md text-sm font-semibold transition-all duration-200 ${
                       isActive
-                        ? "bg-[#34D399] text-white"
-                        : "text-white hover:bg-[#0B5563]"
+                        ? "bg-[#34D399] text-[#0B5563] shadow-md"
+                        : "text-white hover:bg-[#34D399]/20 hover:text-[#34D399] hover:pl-6"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -293,7 +296,13 @@ const Header = () => {
                       <span>{item.name}</span>
                     </div>
                     {item.badge && (
-                      <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">
+                      <span
+                        className={`text-xs px-2 py-0.5 rounded-full font-bold ${
+                          isActive
+                            ? "bg-[#0B5563] text-white"
+                            : "bg-red-500 text-white"
+                        }`}
+                      >
                         {item.badge}
                       </span>
                     )}
