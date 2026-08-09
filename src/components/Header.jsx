@@ -13,6 +13,7 @@ import {
 import LoginDialog from "./LoginDialog";
 import SignUpDialog from "./SignUpDialog";
 import { useAuth } from "../context/AuthContext";
+import { getSportLiveCount, getTotalLiveCount } from "../data/liveMatches";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,7 +27,6 @@ const Header = () => {
 
   const location = useLocation();
 
-  // Lock scroll on mobile menu toggle
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -44,13 +44,19 @@ const Header = () => {
     { code: "CA", flag: "/images/flags/ca.png" },
   ];
 
+  // Live counts pulled from the same shared data source as InPlayPage
+  const cricketLiveCount = getSportLiveCount("cricket");
+  const soccerLiveCount = getSportLiveCount("soccer");
+  const tennisLiveCount = getSportLiveCount("tennis");
+  const totalLiveCount = getTotalLiveCount();
+
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "In-Play", path: "/in-play" },
+    { name: "In-Play", path: "/in-play", badge: String(totalLiveCount) },
     { name: "Hundred Cup", path: "/hundred-cup", badge: "0" },
-    { name: "Cricket", path: "/cricket", badge: "0" },
-    { name: "Soccer", path: "/soccer", badge: "0" },
-    { name: "Tennis", path: "/tennis" },
+    { name: "Cricket", path: "/cricket", badge: String(cricketLiveCount) },
+    { name: "Soccer", path: "/soccer", badge: String(soccerLiveCount) },
+    { name: "Tennis", path: "/tennis", badge: String(tennisLiveCount) },
     { name: "Indian Poker", path: "/indian-poker" },
     { name: "Indian Poker II", path: "/indian-poker-2" },
     { name: "RV Games", path: "/rv-games" },
