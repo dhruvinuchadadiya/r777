@@ -14,6 +14,7 @@ import LoginDialog from "../layout/LoginDialog";
 import SignUpDialog from "../layout/SignUpDialog";
 import { useAuth } from "../../context/AuthContext";
 import { getSportLiveCount, getTotalLiveCount } from "../../data/liveMatches";
+import AccountDrawer from "./AccountDrawer";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,6 +25,7 @@ const Header = () => {
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState("EN");
   const { user, isAuthenticated, logout } = useAuth();
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const location = useLocation();
 
@@ -187,9 +189,21 @@ const Header = () => {
                         {userMenuOpen && (
                           <div className="absolute right-0 mt-2 w-44 bg-[#1a1a2e] border border-[#0B5563] rounded-lg shadow-xl overflow-hidden z-50">
                             <div className="px-4 py-2.5 border-b border-[#2d2d44]">
-                              <p className="text-white text-sm font-medium truncate">
-                                {user?.username || "Player"}
+                              <p className="w-full flex items-center space-x-2 text-white text-sm font-medium truncate">
+                                <UserIcon size={18} />
+                                <span>{user?.username || "Player"}</span>
                               </p>
+                            </div>
+                            <div className="hidden md:flex flex-col space-y-1 shrink-0">
+                              {isAuthenticated && (
+                                <button
+                                  onClick={() => setDrawerOpen(true)}
+                                  className={`w-full flex items-center space-x-2 px-4 py-3 text-sm text-white hover:bg-[#34D399]/15 transition`}
+                                >
+                                  <Menu size={16} />
+                                  <span>Account</span>
+                                </button>
+                              )}
                             </div>
                             <button
                               onClick={async () => {
@@ -348,6 +362,7 @@ const Header = () => {
         )}
       </header>
 
+      <AccountDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
       {/* Dialogs */}
       <LoginDialog open={loginOpen} onOpenChange={setLoginOpen} />
       <SignUpDialog open={signUpOpen} onOpenChange={setSignUpOpen} />
