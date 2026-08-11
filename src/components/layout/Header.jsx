@@ -364,8 +364,16 @@ const Header = () => {
 
       <AccountDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
       {/* Dialogs */}
-      <LoginDialog open={loginOpen} onOpenChange={setLoginOpen} />
-      <SignUpDialog open={signUpOpen} onOpenChange={setSignUpOpen} />
+      <LoginDialog
+        open={loginOpen}
+        onOpenChange={setLoginOpen}
+        onSwitchToSignUp={() => setSignUpOpen(true)}
+      />
+      <SignUpDialog
+        open={signUpOpen}
+        onOpenChange={setSignUpOpen}
+        onSwitchToLogin={() => setLoginOpen(true)}
+      />
     </>
   );
 };

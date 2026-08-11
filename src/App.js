@@ -9,7 +9,11 @@ import GameProviders from "./components/pages/home/GameProviders";
 import Footer from "./components/layout/Footer";
 import MobileBottomNav from "./components/layout/MobileBottomNav";
 import { AuthProvider } from "./context/AuthContext";
-import InPlayPage from "./components/pages/InPlay"; // adjust path if it's in components/ or pages/
+import InPlay from "./components/pages/InPlay";
+import Cricket from "./components/pages/Cricket";
+import Soccer from "./components/pages/Soccer";
+import Tennis from "./components/pages/Tennis";
+import ScrollToTop from "./components/shared/ScrollToTop";
 
 const HomePage = () => {
   return (
@@ -56,13 +60,14 @@ function App() {
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route
               path="/in-play"
               element={
                 <PageLayout>
-                  <InPlayPage />
+                  <InPlay />
                 </PageLayout>
               }
             />
@@ -72,15 +77,27 @@ function App() {
             />
             <Route
               path="/cricket"
-              element={<PlaceholderPage title="Cricket" />}
+              element={
+                <PageLayout>
+                  <Cricket />
+                </PageLayout>
+              }
             />
             <Route
               path="/soccer"
-              element={<PlaceholderPage title="Soccer" />}
+              element={
+                <PageLayout>
+                  <Soccer />
+                </PageLayout>
+              }
             />
             <Route
               path="/tennis"
-              element={<PlaceholderPage title="Tennis" />}
+              element={
+                <PageLayout>
+                  <Tennis />
+                </PageLayout>
+              }
             />
             <Route
               path="/indian-poker"

@@ -8,7 +8,7 @@ import { Eye, EyeOff, RefreshCw, User, Lock, Shield } from "lucide-react";
 import { useToast } from "../../hooks/use-toast";
 import { useAuth } from "../../context/AuthContext";
 
-const LoginDialog = ({ open, onOpenChange }) => {
+const LoginDialog = ({ open, onOpenChange, onSwitchToSignUp }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +19,6 @@ const LoginDialog = ({ open, onOpenChange }) => {
   const { toast } = useToast();
   const { login } = useAuth();
 
-  // Generate random captcha
   const generateCaptcha = () => {
     const chars = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789";
     let code = "";
@@ -39,7 +38,6 @@ const LoginDialog = ({ open, onOpenChange }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Validation
     if (!username || !password) {
       toast({
         title: "Error",
@@ -280,6 +278,11 @@ const LoginDialog = ({ open, onOpenChange }) => {
               Don't have an account?{" "}
               <button
                 type="button"
+                onClick={() => {
+                  onOpenChange(false);
+                  if (typeof onSwitchToSignUp === "function")
+                    onSwitchToSignUp();
+                }}
                 className="text-[#34D399] hover:text-[#10B981] font-semibold transition"
               >
                 Sign Up Now

@@ -8,7 +8,7 @@ import { Eye, EyeOff, User, Lock, Mail, Phone } from "lucide-react";
 import { useToast } from "../../hooks/use-toast";
 import { useAuth } from "../../context/AuthContext";
 
-const SignUpDialog = ({ open, onOpenChange }) => {
+const SignUpDialog = ({ open, onOpenChange, onSwitchToLogin }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -31,7 +31,6 @@ const SignUpDialog = ({ open, onOpenChange }) => {
   const handleSignUp = async (e) => {
     e.preventDefault();
 
-    // Validation
     if (
       !formData.username ||
       !formData.email ||
@@ -87,8 +86,8 @@ const SignUpDialog = ({ open, onOpenChange }) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px] bg-gradient-to-br from-[#0f0f1e] to-[#1a1a2e] border-2 border-[#0B5563] text-white max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
+      <DialogContent className="sm:max-w-[500px] max-h-[90vh] flex flex-col bg-gradient-to-br from-[#0f0f1e] to-[#1a1a2e] border-2 border-[#0B5563] text-white p-0 gap-0">
+        <DialogHeader className="px-6 pt-6 pb-2 shrink-0">
           <DialogTitle className="text-center text-2xl font-bold text-white mb-2">
             <div className="flex items-center justify-center space-x-2">
               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
@@ -102,7 +101,10 @@ const SignUpDialog = ({ open, onOpenChange }) => {
           </p>
         </DialogHeader>
 
-        <form onSubmit={handleSignUp} className="space-y-4 mt-4">
+        <form
+          onSubmit={handleSignUp}
+          className="space-y-4 px-6 pb-6 mt-2 overflow-y-auto"
+        >
           {/* Username */}
           <div className="space-y-2">
             <Label
@@ -272,7 +274,10 @@ const SignUpDialog = ({ open, onOpenChange }) => {
               Already have an account?{" "}
               <button
                 type="button"
-                onClick={() => onOpenChange(false)}
+                onClick={() => {
+                  onOpenChange(false);
+                  if (typeof onSwitchToLogin === "function") onSwitchToLogin();
+                }}
                 className="text-[#34D399] hover:text-[#10B981] font-semibold transition"
               >
                 Login Here
