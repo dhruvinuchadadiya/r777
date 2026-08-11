@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   X,
@@ -30,6 +30,24 @@ const AccountDrawer = ({ open, onClose }) => {
   const { user, logout } = useAuth();
   const location = useLocation();
 
+  // Ref for active drawer menu item
+  const activeItemRef = useRef(null);
+
+  // Automatically scroll active item into view vertically when drawer opens or path changes
+  useEffect(() => {
+    if (open && activeItemRef.current) {
+      // Small timeout ensures DOM elements are fully rendered before scrolling
+      const timer = setTimeout(() => {
+        activeItemRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center", // Vertically centers active item in the scrollable drawer
+        });
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [open, location.pathname]);
+
   if (!open) return null;
 
   const handleLogout = async () => {
@@ -42,7 +60,7 @@ const AccountDrawer = ({ open, onClose }) => {
       {/* Overlay */}
       <div className="fixed inset-0 bg-black/50 z-[60]" onClick={onClose} />
 
-      {/* Drawer */}
+      {/* Drawer Container */}
       <div className="fixed top-0 right-0 bottom-0 w-[85%] max-w-[380px] bg-[#0d5563] z-[70] overflow-y-auto shadow-2xl">
         {/* Close button */}
         <div className="flex justify-end p-4">
@@ -88,6 +106,7 @@ const AccountDrawer = ({ open, onClose }) => {
             return (
               <Link
                 key={item.name}
+                ref={isActive ? activeItemRef : null} // Attach ref to active item
                 to={item.path}
                 onClick={onClose}
                 className={`flex items-center space-x-4 px-5 py-3.5 border-b border-[#0a4550] transition-all duration-200 ${

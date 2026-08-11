@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
 import {
@@ -28,6 +28,33 @@ const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const location = useLocation();
+  const activeNavRef = useRef(null);
+  const activeMobileNavRef = useRef(null); // Ref for mobile active item
+
+  // Scroll active desktop nav link into view
+  useEffect(() => {
+    if (activeNavRef.current) {
+      activeNavRef.current.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [location.pathname]);
+
+  // Scroll active mobile nav link into view when mobile menu opens or route changes
+  useEffect(() => {
+    if (mobileMenuOpen && activeMobileNavRef.current) {
+      const timer = setTimeout(() => {
+        activeMobileNavRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [mobileMenuOpen, location.pathname]);
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -108,12 +135,13 @@ const Header = () => {
 
             {/* 2. Desktop Navigation */}
             <div className="hidden md:flex items-center flex-1 min-w-0 mx-2 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-              <div className="flex items-center space-x-1.5 flex-nowrap mx-auto">
+              <div className="flex items-center space-x-1.5 flex-nowrap min-w-max mx-auto">
                 {navItems.map((item) => {
                   const isActive = location.pathname === item.path;
                   return (
                     <Link
                       key={item.name}
+                      ref={isActive ? activeNavRef : null}
                       to={item.path}
                       className={`whitespace-nowrap px-3 py-1.5 rounded-md text-xs xl:text-sm font-semibold transition-all duration-200 shrink-0 flex items-center space-x-1.5 ${
                         isActive
@@ -297,6 +325,7 @@ const Header = () => {
                 return (
                   <Link
                     key={item.name}
+                    ref={isActive ? activeMobileNavRef : null} // Attach ref here
                     to={item.path}
                     className={`flex items-center justify-between px-4 py-3 rounded-md text-sm font-semibold transition-all duration-200 ${
                       isActive

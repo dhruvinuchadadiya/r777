@@ -68,12 +68,15 @@ const CricketPage = () => {
           {match.score}
         </div>
       )}
-      <div className="text-[10px] text-gray-400">{match.league}</div>
-      {match.hasBM && (
-        <span className="inline-block mt-1 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">
-          BM
-        </span>
-      )}
+      <div className="text-[10px] text-gray-400 flex items-center gap-2 mt-0.5">
+        <span>{match.league}</span>
+        {match.hasTV && <Tv size={12} className="text-green-500" />}
+        {match.hasBM && (
+          <span className="bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">
+            BM
+          </span>
+        )}
+      </div>
     </td>
   );
 
