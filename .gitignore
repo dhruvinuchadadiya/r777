@@ -43,3 +43,467 @@ node_modules/.cache/.eslintcache
 node_modules/.cache/default-development/13.pack
 node_modules/.cache/default-development/index.pack
 node_modules/.cache/default-development/index.pack.old
+.vscode/chrome/CrashpadMetrics-active.pma
+.vscode/chrome/First Run
+.vscode/chrome/first_party_sets.db
+.vscode/chrome/first_party_sets.db-journal
+.vscode/chrome/Last Browser
+.vscode/chrome/Last Version
+.vscode/chrome/Local State
+.vscode/chrome/Variations
+.vscode/chrome/BrowserMetrics/BrowserMetrics-6A7B0C85-B40.pma
+.vscode/chrome/BrowserMetrics/BrowserMetrics-6A7B0CFA-7DE4.pma
+.vscode/chrome/BrowserMetrics/BrowserMetrics-6A7B0D9B-15C.pma
+.vscode/chrome/BrowserMetrics/BrowserMetrics-6A7B0D24-A14C.pma
+.vscode/chrome/Crashpad/metadata
+.vscode/chrome/Crashpad/settings.dat
+.vscode/chrome/Default/Account Web Data
+.vscode/chrome/Default/Account Web Data-journal
+.vscode/chrome/Default/Affiliation Database
+.vscode/chrome/Default/Affiliation Database-journal
+.vscode/chrome/Default/BookmarkMergedSurfaceOrdering
+.vscode/chrome/Default/BrowsingTopicsSiteData
+.vscode/chrome/Default/BrowsingTopicsSiteData-journal
+.vscode/chrome/Default/BrowsingTopicsState
+.vscode/chrome/Default/DIPS
+.vscode/chrome/Default/engine_allowlist.bf
+.vscode/chrome/Default/Favicons
+.vscode/chrome/Default/Favicons-journal
+.vscode/chrome/Default/heavy_ad_intervention_opt_out.db
+.vscode/chrome/Default/heavy_ad_intervention_opt_out.db-journal
+.vscode/chrome/Default/History
+.vscode/chrome/Default/History-journal
+.vscode/chrome/Default/LOCK
+.vscode/chrome/Default/LOG
+.vscode/chrome/Default/LOG.old
+.vscode/chrome/Default/Login Data
+.vscode/chrome/Default/Login Data For Account
+.vscode/chrome/Default/Login Data For Account-journal
+.vscode/chrome/Default/Login Data-journal
+.vscode/chrome/Default/MediaDeviceSalts
+.vscode/chrome/Default/MediaDeviceSalts-journal
+.vscode/chrome/Default/Network Action Predictor
+.vscode/chrome/Default/Network Action Predictor-journal
+.vscode/chrome/Default/Preferences
+.vscode/chrome/Default/PreferredApps
+.vscode/chrome/Default/README
+.vscode/chrome/Default/Secure Preferences
+.vscode/chrome/Default/ServerCertificate
+.vscode/chrome/Default/ServerCertificate-journal
+.vscode/chrome/Default/Shortcuts
+.vscode/chrome/Default/Shortcuts-journal
+.vscode/chrome/Default/Top Sites
+.vscode/chrome/Default/Top Sites-journal
+.vscode/chrome/Default/trusted_vault.pb
+.vscode/chrome/Default/Web Data
+.vscode/chrome/Default/Web Data-journal
+.vscode/chrome/Default/AutofillAiModelCache/LOCK
+.vscode/chrome/Default/AutofillAiModelCache/LOG
+.vscode/chrome/Default/AutofillAiModelCache/LOG.old
+.vscode/chrome/Default/AutofillStrikeDatabase/LOCK
+.vscode/chrome/Default/AutofillStrikeDatabase/LOG
+.vscode/chrome/Default/AutofillStrikeDatabase/LOG.old
+.vscode/chrome/Default/BudgetDatabase/LOCK
+.vscode/chrome/Default/BudgetDatabase/LOG
+.vscode/chrome/Default/BudgetDatabase/LOG.old
+.vscode/chrome/Default/Cache/Cache_Data/data_0
+.vscode/chrome/Default/Cache/Cache_Data/data_1
+.vscode/chrome/Default/Cache/Cache_Data/data_2
+.vscode/chrome/Default/Cache/Cache_Data/data_3
+.vscode/chrome/Default/Cache/Cache_Data/f_000001
+.vscode/chrome/Default/Cache/Cache_Data/f_000002
+.vscode/chrome/Default/Cache/Cache_Data/f_000003
+.vscode/chrome/Default/Cache/Cache_Data/index
+.vscode/chrome/Default/Cache/No_Vary_Search/journal.baj
+.vscode/chrome/Default/Cache/No_Vary_Search/snapshot.baf
+.vscode/chrome/Default/ClientCertificates/LOCK
+.vscode/chrome/Default/ClientCertificates/LOG
+.vscode/chrome/Default/ClientCertificates/LOG.old
+.vscode/chrome/Default/Code Cache/js/1ace7e37c2a5c1df_0
+.vscode/chrome/Default/Code Cache/js/1d428e0e504eafe5_0
+.vscode/chrome/Default/Code Cache/js/7b60552726193183_0
+.vscode/chrome/Default/Code Cache/js/18b5c85dff89605e_0
+.vscode/chrome/Default/Code Cache/js/62efffdc6dce1cba_0
+.vscode/chrome/Default/Code Cache/js/86d90c1230a1c7f9_0
+.vscode/chrome/Default/Code Cache/js/315ec90938ed97d9_0
+.vscode/chrome/Default/Code Cache/js/3090ddd97db5e9b8_0
+.vscode/chrome/Default/Code Cache/js/a8758a77ed59e443_0
+.vscode/chrome/Default/Code Cache/js/aa24f1af47bf2dde_0
+.vscode/chrome/Default/Code Cache/js/ba678a2fbd8c358c_0
+.vscode/chrome/Default/Code Cache/js/fdba3bef56eefeec_0
+.vscode/chrome/Default/Code Cache/js/index
+.vscode/chrome/Default/Code Cache/js/index-dir/the-real-index
+.vscode/chrome/Default/Code Cache/wasm/index
+.vscode/chrome/Default/Code Cache/wasm/index-dir/the-real-index
+.vscode/chrome/Default/DawnGraphiteCache/data_0
+.vscode/chrome/Default/DawnGraphiteCache/data_1
+.vscode/chrome/Default/DawnGraphiteCache/data_2
+.vscode/chrome/Default/DawnGraphiteCache/data_3
+.vscode/chrome/Default/DawnGraphiteCache/index
+.vscode/chrome/Default/DawnWebGPUCache/data_0
+.vscode/chrome/Default/DawnWebGPUCache/data_1
+.vscode/chrome/Default/DawnWebGPUCache/data_2
+.vscode/chrome/Default/DawnWebGPUCache/data_3
+.vscode/chrome/Default/DawnWebGPUCache/index
+.vscode/chrome/Default/Download Service/EntryDB/LOCK
+.vscode/chrome/Default/Download Service/EntryDB/LOG
+.vscode/chrome/Default/Extension Rules/000003.log
+.vscode/chrome/Default/Extension Rules/CURRENT
+.vscode/chrome/Default/Extension Rules/LOCK
+.vscode/chrome/Default/Extension Rules/LOG
+.vscode/chrome/Default/Extension Rules/LOG.old
+.vscode/chrome/Default/Extension Rules/MANIFEST-000001
+.vscode/chrome/Default/Extension Scripts/000003.log
+.vscode/chrome/Default/Extension Scripts/CURRENT
+.vscode/chrome/Default/Extension Scripts/LOCK
+.vscode/chrome/Default/Extension Scripts/LOG
+.vscode/chrome/Default/Extension Scripts/LOG.old
+.vscode/chrome/Default/Extension Scripts/MANIFEST-000001
+.vscode/chrome/Default/Extension State/000003.log
+.vscode/chrome/Default/Extension State/CURRENT
+.vscode/chrome/Default/Extension State/LOCK
+.vscode/chrome/Default/Extension State/LOG
+.vscode/chrome/Default/Extension State/LOG.old
+.vscode/chrome/Default/Extension State/MANIFEST-000001
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/128.png
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/dasherSettingSchema.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/manifest.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/offscreendocument_main.js
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/offscreendocument.html
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/page_embed_script.js
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/service_worker_bin_prod.js
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/af/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/am/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ar/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/as/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/az/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/be/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/bg/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/bn/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ca/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/cs/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/cy/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/da/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/de/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/el/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/en/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/en_CA/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/en_GB/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/en_US/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/es/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/es_419/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/et/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/eu/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/fa/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/fi/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/fil/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/fr/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/fr_CA/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/gl/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/gu/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/hi/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/hr/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/hu/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/hy/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/id/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/is/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/it/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/iw/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ja/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ka/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/kk/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/km/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/kn/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ko/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/lo/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/lt/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/lv/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/mk/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ml/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/mn/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/mr/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ms/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/my/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ne/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/nl/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/no/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/or/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/pa/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/pl/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/pt_BR/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/pt_PT/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ro/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ru/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/si/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/sk/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/sl/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/sq/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/sr/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/sv/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/sw/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ta/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/te/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/th/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/tr/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/uk/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/ur/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/uz/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/vi/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/zh_CN/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/zh_HK/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/zh_TW/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_locales/zu/messages.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_metadata/computed_hashes.json
+.vscode/chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.108.1_0/_metadata/verified_contents.json
+.vscode/chrome/Default/Feature Engagement Tracker/AvailabilityDB/LOCK
+.vscode/chrome/Default/Feature Engagement Tracker/AvailabilityDB/LOG
+.vscode/chrome/Default/Feature Engagement Tracker/AvailabilityDB/LOG.old
+.vscode/chrome/Default/Feature Engagement Tracker/EventDB/LOCK
+.vscode/chrome/Default/Feature Engagement Tracker/EventDB/LOG
+.vscode/chrome/Default/Feature Engagement Tracker/EventDB/LOG.old
+.vscode/chrome/Default/GCM Store/000003.log
+.vscode/chrome/Default/GCM Store/CURRENT
+.vscode/chrome/Default/GCM Store/LOCK
+.vscode/chrome/Default/GCM Store/LOG
+.vscode/chrome/Default/GCM Store/LOG.old
+.vscode/chrome/Default/GCM Store/MANIFEST-000001
+.vscode/chrome/Default/GCM Store/Encryption/000003.log
+.vscode/chrome/Default/GCM Store/Encryption/CURRENT
+.vscode/chrome/Default/GCM Store/Encryption/LOCK
+.vscode/chrome/Default/GCM Store/Encryption/LOG
+.vscode/chrome/Default/GCM Store/Encryption/MANIFEST-000001
+.vscode/chrome/Default/GPUCache/data_0
+.vscode/chrome/Default/GPUCache/data_1
+.vscode/chrome/Default/GPUCache/data_2
+.vscode/chrome/Default/GPUCache/data_3
+.vscode/chrome/Default/GPUCache/index
+.vscode/chrome/Default/Local Extension Settings/ghbmnnjooekpmoecnnnilnnbdlolhkhi/000003.log
+.vscode/chrome/Default/Local Extension Settings/ghbmnnjooekpmoecnnnilnnbdlolhkhi/CURRENT
+.vscode/chrome/Default/Local Extension Settings/ghbmnnjooekpmoecnnnilnnbdlolhkhi/LOCK
+.vscode/chrome/Default/Local Extension Settings/ghbmnnjooekpmoecnnnilnnbdlolhkhi/LOG
+.vscode/chrome/Default/Local Extension Settings/ghbmnnjooekpmoecnnnilnnbdlolhkhi/MANIFEST-000001
+.vscode/chrome/Default/Local Storage/leveldb/000003.log
+.vscode/chrome/Default/Local Storage/leveldb/CURRENT
+.vscode/chrome/Default/Local Storage/leveldb/LOCK
+.vscode/chrome/Default/Local Storage/leveldb/LOG
+.vscode/chrome/Default/Local Storage/leveldb/LOG.old
+.vscode/chrome/Default/Local Storage/leveldb/MANIFEST-000001
+.vscode/chrome/Default/Network/Cookies
+.vscode/chrome/Default/Network/Cookies-journal
+.vscode/chrome/Default/Network/Device Bound Sessions
+.vscode/chrome/Default/Network/Device Bound Sessions-journal
+.vscode/chrome/Default/Network/Network Persistent State
+.vscode/chrome/Default/Network/NetworkDataMigrated
+.vscode/chrome/Default/Network/Reporting and NEL
+.vscode/chrome/Default/Network/Reporting and NEL-journal
+.vscode/chrome/Default/Network/TransportSecurity
+.vscode/chrome/Default/Network/Trust Tokens
+.vscode/chrome/Default/Network/Trust Tokens-journal
+.vscode/chrome/Default/PersistentOriginTrials/LOCK
+.vscode/chrome/Default/PersistentOriginTrials/LOG
+.vscode/chrome/Default/PersistentOriginTrials/LOG.old
+.vscode/chrome/Default/Safe Browsing Network/NetworkDataMigrated
+.vscode/chrome/Default/Safe Browsing Network/Safe Browsing Cookies
+.vscode/chrome/Default/Safe Browsing Network/Safe Browsing Cookies-journal
+.vscode/chrome/Default/Segmentation Platform/SegmentInfoDB/LOCK
+.vscode/chrome/Default/Segmentation Platform/SegmentInfoDB/LOG
+.vscode/chrome/Default/Segmentation Platform/SegmentInfoDB/LOG.old
+.vscode/chrome/Default/Segmentation Platform/SignalDB/LOCK
+.vscode/chrome/Default/Segmentation Platform/SignalDB/LOG
+.vscode/chrome/Default/Segmentation Platform/SignalDB/LOG.old
+.vscode/chrome/Default/Segmentation Platform/SignalStorageConfigDB/LOCK
+.vscode/chrome/Default/Segmentation Platform/SignalStorageConfigDB/LOG
+.vscode/chrome/Default/Segmentation Platform/SignalStorageConfigDB/LOG.old
+.vscode/chrome/Default/Service Worker/Database/000003.log
+.vscode/chrome/Default/Service Worker/Database/CURRENT
+.vscode/chrome/Default/Service Worker/Database/LOCK
+.vscode/chrome/Default/Service Worker/Database/LOG
+.vscode/chrome/Default/Service Worker/Database/LOG.old
+.vscode/chrome/Default/Service Worker/Database/MANIFEST-000001
+.vscode/chrome/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0
+.vscode/chrome/Default/Service Worker/ScriptCache/4cb013792b196a35_0
+.vscode/chrome/Default/Service Worker/ScriptCache/4cb013792b196a35_1
+.vscode/chrome/Default/Service Worker/ScriptCache/f1cdccba37924bda_0
+.vscode/chrome/Default/Service Worker/ScriptCache/f1cdccba37924bda_1
+.vscode/chrome/Default/Service Worker/ScriptCache/index
+.vscode/chrome/Default/Service Worker/ScriptCache/index-dir/the-real-index
+.vscode/chrome/Default/Session Storage/000003.log
+.vscode/chrome/Default/Session Storage/CURRENT
+.vscode/chrome/Default/Session Storage/LOCK
+.vscode/chrome/Default/Session Storage/LOG
+.vscode/chrome/Default/Session Storage/MANIFEST-000001
+.vscode/chrome/Default/Sessions/Session_13430922804698871
+.vscode/chrome/Default/Sessions/Session_13430922909987757
+.vscode/chrome/Default/Sessions/Tabs_13430922804911567
+.vscode/chrome/Default/Sessions/Tabs_13430922910358411
+.vscode/chrome/Default/Shared Dictionary/db
+.vscode/chrome/Default/Shared Dictionary/db-journal
+.vscode/chrome/Default/Shared Dictionary/cache/index
+.vscode/chrome/Default/Shared Dictionary/cache/index-dir/the-real-index
+.vscode/chrome/Default/Site Characteristics Database/000003.log
+.vscode/chrome/Default/Site Characteristics Database/CURRENT
+.vscode/chrome/Default/Site Characteristics Database/LOCK
+.vscode/chrome/Default/Site Characteristics Database/LOG
+.vscode/chrome/Default/Site Characteristics Database/LOG.old
+.vscode/chrome/Default/Site Characteristics Database/MANIFEST-000001
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/InterestGroups
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/PrivateAggregation
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/PrivateAggregation-journal
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/SharedStorage
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Code Cache/js/5dea14b9816ec6d9_0
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Code Cache/js/index
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Code Cache/js/index-dir/the-real-index
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Code Cache/wasm/index
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Code Cache/wasm/index-dir/the-real-index
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/DawnGraphiteCache/data_0
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/DawnGraphiteCache/data_1
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/DawnGraphiteCache/data_2
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/DawnGraphiteCache/data_3
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/DawnGraphiteCache/index
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/DawnWebGPUCache/data_0
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/DawnWebGPUCache/data_1
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/DawnWebGPUCache/data_2
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/DawnWebGPUCache/data_3
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/DawnWebGPUCache/index
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/GPUCache/data_0
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/GPUCache/data_1
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/GPUCache/data_2
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/GPUCache/data_3
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/GPUCache/index
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Local Storage/leveldb/000003.log
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Local Storage/leveldb/CURRENT
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Local Storage/leveldb/LOCK
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Local Storage/leveldb/LOG
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Local Storage/leveldb/LOG.old
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Local Storage/leveldb/MANIFEST-000001
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Network/Cookies
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Network/Cookies-journal
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Network/Device Bound Sessions
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Network/Device Bound Sessions-journal
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Network/Network Persistent State
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Network/NetworkDataMigrated
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Network/Trust Tokens
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Network/Trust Tokens-journal
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Session Storage/000003.log
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Session Storage/CURRENT
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Session Storage/LOCK
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Session Storage/LOG
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Session Storage/LOG.old
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Session Storage/MANIFEST-000001
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Shared Dictionary/db
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Shared Dictionary/db-journal
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Shared Dictionary/cache/index
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/Shared Dictionary/cache/index-dir/the-real-index
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/WebStorage/QuotaManager
+.vscode/chrome/Default/Storage/ext/nmmhkkegccagdldgiimedpiccmgmieda/def/WebStorage/QuotaManager-journal
+.vscode/chrome/Default/Sync Data/LevelDB/000003.log
+.vscode/chrome/Default/Sync Data/LevelDB/CURRENT
+.vscode/chrome/Default/Sync Data/LevelDB/LOCK
+.vscode/chrome/Default/Sync Data/LevelDB/LOG
+.vscode/chrome/Default/Sync Data/LevelDB/LOG.old
+.vscode/chrome/Default/Sync Data/LevelDB/MANIFEST-000001
+.vscode/chrome/Default/WebStorage/QuotaManager
+.vscode/chrome/Default/WebStorage/QuotaManager-journal
+.vscode/chrome/Default/chrome_cart_db/LOCK
+.vscode/chrome/Default/chrome_cart_db/LOG
+.vscode/chrome/Default/chrome_cart_db/LOG.old
+.vscode/chrome/Default/commerce_subscription_db/LOCK
+.vscode/chrome/Default/commerce_subscription_db/LOG
+.vscode/chrome/Default/commerce_subscription_db/LOG.old
+.vscode/chrome/Default/discount_infos_db/LOCK
+.vscode/chrome/Default/discount_infos_db/LOG
+.vscode/chrome/Default/discount_infos_db/LOG.old
+.vscode/chrome/Default/discounts_db/LOCK
+.vscode/chrome/Default/discounts_db/LOG
+.vscode/chrome/Default/discounts_db/LOG.old
+.vscode/chrome/Default/optimization_guide_hint_cache_store/LOCK
+.vscode/chrome/Default/optimization_guide_hint_cache_store/LOG
+.vscode/chrome/Default/optimization_guide_hint_cache_store/LOG.old
+.vscode/chrome/Default/parcel_tracking_db/LOCK
+.vscode/chrome/Default/parcel_tracking_db/LOG
+.vscode/chrome/Default/parcel_tracking_db/LOG.old
+.vscode/chrome/Default/shared_proto_db/000003.log
+.vscode/chrome/Default/shared_proto_db/CURRENT
+.vscode/chrome/Default/shared_proto_db/LOCK
+.vscode/chrome/Default/shared_proto_db/LOG
+.vscode/chrome/Default/shared_proto_db/LOG.old
+.vscode/chrome/Default/shared_proto_db/MANIFEST-000001
+.vscode/chrome/Default/shared_proto_db/metadata/000003.log
+.vscode/chrome/Default/shared_proto_db/metadata/CURRENT
+.vscode/chrome/Default/shared_proto_db/metadata/LOCK
+.vscode/chrome/Default/shared_proto_db/metadata/LOG
+.vscode/chrome/Default/shared_proto_db/metadata/LOG.old
+.vscode/chrome/Default/shared_proto_db/metadata/MANIFEST-000001
+.vscode/chrome/GPUPersistentCache/DawnGraphiteCache/WRJTYMYAB73RC6HTXXLKRS2FEZVUG6PP/cache.db
+.vscode/chrome/GPUPersistentCache/DawnGraphiteCache/WRJTYMYAB73RC6HTXXLKRS2FEZVUG6PP/cache.db-wal
+.vscode/chrome/GPUPersistentCache/DawnGraphiteCache/WRJTYMYAB73RC6HTXXLKRS2FEZVUG6PP/cache.journal
+.vscode/chrome/GrShaderCache/data_0
+.vscode/chrome/GrShaderCache/data_1
+.vscode/chrome/GrShaderCache/data_2
+.vscode/chrome/GrShaderCache/data_3
+.vscode/chrome/GrShaderCache/f_000001
+.vscode/chrome/GrShaderCache/f_000002
+.vscode/chrome/GrShaderCache/f_000003
+.vscode/chrome/GrShaderCache/index
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/classifier_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/manifest.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/manifest.json
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/prompt_gemma4_4b_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/prompt_gemma4_12b_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/prompt_gemma4_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/prompt_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/proofreader_small_expert_model_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/scam_detection_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/speech_recognition_small_expert_model_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/summarizer_gemma4_4b_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/summarizer_gemma4_12b_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/summarizer_gemma4_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/summarizer_nano_v3_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/summarizer_small_expert_model_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/writing_assistance_gemma4_4b_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/writing_assistance_gemma4_12b_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/writing_assistance_gemma4_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/writing_assistance_solution_config.binarypb
+.vscode/chrome/OptimizationGuideModelsManifest/1.20260804.1/_metadata/verified_contents.json
+.vscode/chrome/ShaderCache/data_0
+.vscode/chrome/ShaderCache/data_1
+.vscode/chrome/ShaderCache/data_2
+.vscode/chrome/ShaderCache/data_3
+.vscode/chrome/ShaderCache/index
+.vscode/chrome/component_crx_cache/metadata.json
+.vscode/chrome/extensions_crx_cache/metadata.json
+.vscode/chrome/optimization_guide_model_store/13/E6DC4029A1E4B4C1/FCC6EBF9A3FB91EB/model-info.pb
+.vscode/chrome/optimization_guide_model_store/13/E6DC4029A1E4B4C1/FCC6EBF9A3FB91EB/model.tflite
+.vscode/chrome/optimization_guide_model_store/15/E6DC4029A1E4B4C1/523DDF41CDD91B15/model-info.pb
+.vscode/chrome/optimization_guide_model_store/15/E6DC4029A1E4B4C1/523DDF41CDD91B15/model.tflite
+.vscode/chrome/optimization_guide_model_store/15/E6DC4029A1E4B4C1/523DDF41CDD91B15/override_list.pb.gz
+.vscode/chrome/optimization_guide_model_store/15/E6DC4029A1E4B4C1/523DDF41CDD91B15/VERSION.txt
+.vscode/chrome/optimization_guide_model_store/2/E6DC4029A1E4B4C1/29E56B7ABC13B4F4/model-info.pb
+.vscode/chrome/optimization_guide_model_store/2/E6DC4029A1E4B4C1/29E56B7ABC13B4F4/model.tflite
+.vscode/chrome/optimization_guide_model_store/20/E6DC4029A1E4B4C1/79ACC11B4EF99C6F/model-info.pb
+.vscode/chrome/optimization_guide_model_store/20/E6DC4029A1E4B4C1/79ACC11B4EF99C6F/model.tflite
+.vscode/chrome/optimization_guide_model_store/24/E6DC4029A1E4B4C1/C53CB88F9E548B97/enus_denylist_encoded_241007.txt
+.vscode/chrome/optimization_guide_model_store/24/E6DC4029A1E4B4C1/C53CB88F9E548B97/model-info.pb
+.vscode/chrome/optimization_guide_model_store/24/E6DC4029A1E4B4C1/C53CB88F9E548B97/model.tflite
+.vscode/chrome/optimization_guide_model_store/24/E6DC4029A1E4B4C1/C53CB88F9E548B97/vocab_en-us.txt
+.vscode/chrome/optimization_guide_model_store/25/E6DC4029A1E4B4C1/93121C14E78710AA/model-info.pb
+.vscode/chrome/optimization_guide_model_store/25/E6DC4029A1E4B4C1/93121C14E78710AA/model.tflite
+.vscode/chrome/optimization_guide_model_store/25/E6DC4029A1E4B4C1/93121C14E78710AA/visual_model_desktop.tflite
+.vscode/chrome/optimization_guide_model_store/26/E6DC4029A1E4B4C1/E0688AE8DF1C9035/model-info.pb
+.vscode/chrome/optimization_guide_model_store/26/E6DC4029A1E4B4C1/E0688AE8DF1C9035/model.tflite
+.vscode/chrome/optimization_guide_model_store/43/E6DC4029A1E4B4C1/8236B0E95FD2818B/model-info.pb
+.vscode/chrome/optimization_guide_model_store/43/E6DC4029A1E4B4C1/8236B0E95FD2818B/model.tflite
+.vscode/chrome/optimization_guide_model_store/43/E6DC4029A1E4B4C1/8236B0E95FD2818B/sentencepiece.model
+.vscode/chrome/optimization_guide_model_store/45/E6DC4029A1E4B4C1/C622DC037B86ABDB/model-info.pb
+.vscode/chrome/optimization_guide_model_store/45/E6DC4029A1E4B4C1/C622DC037B86ABDB/model.tflite
+.vscode/chrome/optimization_guide_model_store/9/E6DC4029A1E4B4C1/808C0653DD384BC9/model-info.pb
+.vscode/chrome/optimization_guide_model_store/9/E6DC4029A1E4B4C1/808C0653DD384BC9/model.tflite
+.vscode/chrome/segmentation_platform/ukm_db
+node_modules/.cache/.eslintcache
+node_modules/.cache/default-development/0.pack
+node_modules/.cache/default-development/2.pack
+node_modules/.cache/default-development/7.pack
+node_modules/.cache/default-development/9.pack
+node_modules/.cache/default-development/14.pack
+node_modules/.cache/default-development/index.pack
+node_modules/.cache/default-development/index.pack.old
