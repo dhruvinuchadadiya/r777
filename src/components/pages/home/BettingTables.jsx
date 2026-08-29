@@ -1,11 +1,11 @@
+import LoginDialog from "@/components/layout/LoginDialog";
+import BetSlipRow from "@/components/shared/bet-match/BetSlipRow";
+import OddsCell from "@/components/shared/bet-match/OddsCell";
+import { useAuth } from "@/core/context/AuthContext";
+import { matchesData } from "@/core/data/matchesData";
+import { ChevronRight, Tv } from "lucide-react";
 import React, { useState } from "react";
-import { Tv, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { matchesData } from "../../../data/matchesData";
-import { useAuth } from "../../../context/AuthContext";
-import LoginDialog from "../../layout/LoginDialog";
-import OddsCell from "../../shared/bet-match/OddsCell";
-import BetSlipRow from "../../shared/bet-match/BetSlipRow";
 
 const BettingTables = () => {
   const [selectedBet, setSelectedBet] = useState(null); // { matchId, selection, type }

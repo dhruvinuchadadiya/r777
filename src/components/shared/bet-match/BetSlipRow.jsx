@@ -1,5 +1,4 @@
-import React from "react";
-import { Plus, Minus, X } from "lucide-react";
+import { Minus, Plus, X } from "lucide-react";
 
 const stakePresets = [50, 100, 200, 500, 1000, 5000];
 

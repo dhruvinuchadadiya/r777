@@ -1,11 +1,12 @@
+import LoginDialog from "@/components/layout/LoginDialog";
+import SportIcon from "@/components/layout/SportIcon";
+import BetSlipRow from "@/components/shared/bet-match/BetSlipRow";
+import OddsCell from "@/components/shared/bet-match/OddsCell";
+import { useAuth } from "@/core/context/AuthContext";
+import { getSportLiveCount, matchesData } from "@/core/data/matchesData";
+import { ChevronRight, Search } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, Radio, Grid3x3, ChevronRight } from "lucide-react";
-import { matchesData, getSportLiveCount } from "../../data/matchesData";
-import { useAuth } from "../../context/AuthContext";
-import LoginDialog from "../layout/LoginDialog";
-import OddsCell from "../shared/bet-match/OddsCell";
-import BetSlipRow from "../shared/bet-match/BetSlipRow";
 
 const InPlayPage = () => {
   const [activeTab, setActiveTab] = useState("all"); // "live" | "all" | "cricket" | "soccer" | "tennis"
@@ -65,37 +66,37 @@ const InPlayPage = () => {
     {
       id: "live",
       label: "Watch Live",
-      icon: Radio,
       count: null,
       gradient: "from-purple-500 to-pink-500",
+      iconKey: "inPlay",
     },
     {
       id: "all",
       label: "All Games",
-      icon: Grid3x3,
       count: null,
       gradient: "from-gray-500 to-gray-700",
+      iconKey: "allGames",
     },
     {
       id: "cricket",
       label: "Cricket",
-      emoji: "🏏",
       count: getSportLiveCount("cricket"),
       gradient: "from-red-500 to-red-700",
+      iconKey: "cricket",
     },
     {
       id: "soccer",
       label: "Soccer",
-      emoji: "⚽",
       count: getSportLiveCount("soccer"),
       gradient: "from-green-400 to-green-600",
+      iconKey: "soccer",
     },
     {
       id: "tennis",
       label: "Tennis",
-      emoji: "🎾",
       count: getSportLiveCount("tennis"),
       gradient: "from-yellow-300 to-yellow-500",
+      iconKey: "tennis",
     },
   ];
 
@@ -263,22 +264,23 @@ const InPlayPage = () => {
                 className="flex flex-col items-center gap-2 shrink-0 group"
               >
                 <div
-                  className={`relative w-14 h-14 rounded-full bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg transition-transform group-hover:scale-105 ${
+                  className={`relative w-14 h-14 rounded-full bg-gradient-to-br flex items-center justify-center shadow-lg transition-transform group-hover:scale-105 ${
                     isActive
                       ? "ring-2 ring-[#34D399] ring-offset-2 ring-offset-[#1a1a2e]"
                       : ""
                   }`}
                 >
-                  {item.icon ? (
-                    <item.icon size={24} className="text-white" />
-                  ) : (
-                    <span className="text-2xl">{item.emoji}</span>
-                  )}
-                  {item.count !== null && item.count > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold min-w-[18px] h-[18px] px-1 rounded-full flex items-center justify-center border-2 border-[#1a1a2e]">
-                      {item.count}
-                    </span>
-                  )}
+                  {/* Icon Container with Floating Badge */}
+                  <div className="relative flex items-center justify-center pt-1">
+                    {item.iconKey && (
+                      <SportIcon name={item.iconKey} size={56} />
+                    )}
+                    {item.count !== null && item.count > 0 && (
+                      <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold min-w-[18px] h-[18px] px-1 rounded-full flex items-center justify-center border-2 border-[#1a1a2e]">
+                        {item.count}
+                      </span>
+                    )}
+                  </div>
                 </div>
                 <span className="text-xs font-bold text-gray-200 whitespace-nowrap">
                   {item.label}

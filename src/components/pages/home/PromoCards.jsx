@@ -1,6 +1,5 @@
-import React from "react";
+import { promoCards } from "@/core/data/mockData";
 import { ChevronRight } from "lucide-react";
-import { promoCards } from "../../../mockData";
 
 const PromoCards = () => {
   const getIcon = (iconType) => {

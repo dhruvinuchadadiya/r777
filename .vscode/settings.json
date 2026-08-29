@@ -1,0 +1,7 @@
+{
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": "always",
+    "source.organizeImports": "always"
+  }
+}

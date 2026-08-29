@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
-import { Checkbox } from "../ui/checkbox";
-import { Eye, EyeOff, RefreshCw, User, Lock, Shield } from "lucide-react";
-import { useToast } from "../../hooks/use-toast";
-import { useAuth } from "../../context/AuthContext";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useAuth } from "@/core/context/AuthContext";
+import { useToast } from "@/core/hooks/use-toast";
+import { Eye, EyeOff, Lock, RefreshCw, Shield, User } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const LoginDialog = ({ open, onOpenChange, onSwitchToSignUp }) => {
   const [showPassword, setShowPassword] = useState(false);

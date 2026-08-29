@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import { topGames } from "@/core/data/mockData";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { topGames } from "../../../mockData";
+import { useRef } from "react";
 
 const TopGames = () => {
   const scrollContainerRef = useRef(null);

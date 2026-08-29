@@ -1,19 +1,19 @@
-import React, { useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "@/core/context/AuthContext";
 import {
-  X,
-  User as UserIcon,
-  FileText,
-  PieChart,
-  History,
-  ClipboardList,
-  Hand,
   BookOpen,
-  Lock,
   CheckSquare,
+  ClipboardList,
+  FileText,
+  Hand,
+  History,
+  Lock,
   LogOut,
+  PieChart,
+  User as UserIcon,
+  X,
 } from "lucide-react";
-import { useAuth } from "../../context/AuthContext";
+import { useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const menuItems = [
   { name: "Account Statement", path: "/account-statement", icon: FileText },

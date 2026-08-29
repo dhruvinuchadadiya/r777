@@ -1,0 +1,5 @@
+.react-sports-icon {
+  display: inline-block;
+  background-image: url("../../public/images/icons/sports-icons.svg");
+  background-repeat: no-repeat;
+}

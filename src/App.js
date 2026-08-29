@@ -1,19 +1,19 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/layout/Header";
-import HeroCarousel from "./components/pages/home/HeroCarousel";
-import PromoCards from "./components/pages/home/PromoCards";
-import TopGames from "./components/pages/home/TopGames";
-import BettingTables from "./components/pages/home/BettingTables";
-import GameProviders from "./components/pages/home/GameProviders";
-import Footer from "./components/layout/Footer";
-import MobileBottomNav from "./components/layout/MobileBottomNav";
-import { AuthProvider } from "./context/AuthContext";
-import InPlay from "./components/pages/InPlay";
-import Cricket from "./components/pages/Cricket";
-import Soccer from "./components/pages/Soccer";
-import Tennis from "./components/pages/Tennis";
-import ScrollToTop from "./components/shared/ScrollToTop";
+import Header from "@/components/layout/Header";
+import HeroCarousel from "@/components/pages/home/HeroCarousel";
+import PromoCards from "@/components/pages/home/PromoCards";
+import TopGames from "@/components/pages/home/TopGames";
+import BettingTables from "@/components/pages/home/BettingTables";
+import GameProviders from "@/components/pages/home/GameProviders";
+import Footer from "@/components/layout/Footer";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
+import { AuthProvider } from "@/core/context/AuthContext";
+import InPlay from "@/components/pages/InPlay";
+import Cricket from "@/components/pages/Cricket";
+import Soccer from "@/components/pages/Soccer";
+import Tennis from "@/components/pages/Tennis";
+import ScrollToTop from "@/components/shared/ScrollToTop";
 
 const HomePage = () => {
   return (

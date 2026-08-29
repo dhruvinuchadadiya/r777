@@ -1,5 +1,3 @@
-import React from "react";
-
 const OddsCell = ({ matchId, selectionName, odds, selectedBet, onSelect }) => {
   if (!odds) {
     return (

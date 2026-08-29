@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { heroBanners } from "@/core/data/mockData";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { heroBanners } from "../../../mockData";
+import React, { useEffect, useState } from "react";
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

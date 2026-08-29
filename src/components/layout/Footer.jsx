@@ -1,14 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const footerLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Terms and Conditions', path: '/terms' },
-    { name: 'Privacy Policy', path: '/privacy' },
-    { name: 'Betting Rules', path: '/betting-rules' },
-    { name: 'Deposits and Withdrawals Rules', path: '/payment-rules' }
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Terms and Conditions", path: "/terms" },
+    { name: "Privacy Policy", path: "/privacy" },
+    { name: "Betting Rules", path: "/betting-rules" },
+    { name: "Deposits and Withdrawals Rules", path: "/payment-rules" },
   ];
 
   return (

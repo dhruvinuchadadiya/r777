@@ -1,5 +1,4 @@
-import React from "react";
-import { gameProviders } from "../../../mockData";
+import { gameProviders } from "@/core/data/mockData";
 
 const GameProviders = () => {
   return (

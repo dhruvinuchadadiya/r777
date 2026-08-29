@@ -1,20 +1,22 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Button } from "../ui/button";
+import AccountDrawer from "@/components/layout/AccountDrawer";
+import LoginDialog from "@/components/layout/LoginDialog";
+import SignUpDialog from "@/components/layout/SignUpDialog";
+import SportIcon from "@/components/layout/SportIcon";
+import { Button } from "@/components/ui/button";
+import { useAuth } from "@/core/context/AuthContext";
+import { getSportLiveCount, getTotalLiveCount } from "@/core/data/liveMatches";
+import { useOutsideClick } from "@/core/hooks/useOutsideClick";
 import {
-  Menu,
-  X,
-  Coins,
-  User as UserIcon,
-  LogOut,
-  ChevronDown,
   Bell,
+  ChevronDown,
+  Coins,
+  LogOut,
+  Menu,
+  User as UserIcon,
+  X,
 } from "lucide-react";
-import LoginDialog from "../layout/LoginDialog";
-import SignUpDialog from "../layout/SignUpDialog";
-import { useAuth } from "../../context/AuthContext";
-import { getSportLiveCount, getTotalLiveCount } from "../../data/liveMatches";
-import AccountDrawer from "./AccountDrawer";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,9 +31,78 @@ const Header = () => {
 
   const location = useLocation();
   const activeNavRef = useRef(null);
-  const activeMobileNavRef = useRef(null); // Ref for mobile active item
+  const activeMobileNavRef = useRef(null);
+  const langMenuRef = useRef(null);
+  const userMenuRef = useRef(null);
 
-  // Scroll active desktop nav link into view
+  const languages = [
+    { code: "EN", flag: "/images/flags/in.png" },
+    { code: "US", flag: "/images/flags/us.png" },
+    { code: "CA", flag: "/images/flags/ca.png" },
+  ];
+
+  // Live counts pulled from shared data source
+  const cricketLiveCount = getSportLiveCount("cricket");
+  const soccerLiveCount = getSportLiveCount("soccer");
+  const tennisLiveCount = getSportLiveCount("tennis");
+  const totalLiveCount = getTotalLiveCount();
+
+  const navItems = [
+    { name: "Home", path: "/", iconKey: "home" },
+    {
+      name: "In-Play",
+      path: "/in-play",
+      iconKey: "inPlay",
+      badge: String(totalLiveCount),
+    },
+    {
+      name: "Hundred Cup",
+      path: "/hundred-cup",
+      iconKey: "hundredCup",
+      badge: "0",
+    },
+    {
+      name: "Cricket",
+      path: "/cricket",
+      iconKey: "cricket",
+      badge: String(cricketLiveCount),
+    },
+    {
+      name: "Soccer",
+      path: "/soccer",
+      iconKey: "soccer",
+      badge: String(soccerLiveCount),
+    },
+    {
+      name: "Tennis",
+      path: "/tennis",
+      iconKey: "tennis",
+      badge: String(tennisLiveCount),
+    },
+    { name: "Indian Poker", path: "/indian-poker", iconKey: "poker" },
+    { name: "Indian Poker II", path: "/indian-poker-2", iconKey: "pokerII" },
+    { name: "RV Games", path: "/rv-games", iconKey: "rvGames" },
+    {
+      name: "Aviator",
+      path: "/aviator",
+      icon: "/images/icons/aviator-icon.svg",
+    },
+    {
+      name: "Chicken Road",
+      path: "/chicken-road",
+      icon: "/images/icons/inout-icon.svg",
+    },
+    { name: "Ezugi", path: "/ezugi", iconKey: "rvGames" },
+    { name: "Evolution", path: "/evolution", iconKey: "rvGames" },
+    { name: "Live Casino", path: "/live-casino", iconKey: "poker" },
+    { name: "Vivo", path: "/vivo", iconKey: "rvGames" },
+    { name: "Betgames", path: "/betgames", iconKey: "rvGames" },
+    { name: "Casino III", path: "/casino-3", iconKey: "poker" },
+  ];
+
+  useOutsideClick(langMenuRef, () => setLangMenuOpen(false));
+  useOutsideClick(userMenuRef, () => setUserMenuOpen(false));
+
   useEffect(() => {
     if (activeNavRef.current) {
       activeNavRef.current.scrollIntoView({
@@ -42,7 +113,6 @@ const Header = () => {
     }
   }, [location.pathname]);
 
-  // Scroll active mobile nav link into view when mobile menu opens or route changes
   useEffect(() => {
     if (mobileMenuOpen && activeMobileNavRef.current) {
       const timer = setTimeout(() => {
@@ -67,46 +137,6 @@ const Header = () => {
     };
   }, [mobileMenuOpen]);
 
-  const languages = [
-    { code: "EN", flag: "/images/flags/in.png" },
-    { code: "US", flag: "/images/flags/us.png" },
-    { code: "CA", flag: "/images/flags/ca.png" },
-  ];
-
-  // Live counts pulled from the same shared data source as InPlayPage
-  const cricketLiveCount = getSportLiveCount("cricket");
-  const soccerLiveCount = getSportLiveCount("soccer");
-  const tennisLiveCount = getSportLiveCount("tennis");
-  const totalLiveCount = getTotalLiveCount();
-
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "In-Play", path: "/in-play", badge: String(totalLiveCount) },
-    { name: "Hundred Cup", path: "/hundred-cup", badge: "0" },
-    { name: "Cricket", path: "/cricket", badge: String(cricketLiveCount) },
-    { name: "Soccer", path: "/soccer", badge: String(soccerLiveCount) },
-    { name: "Tennis", path: "/tennis", badge: String(tennisLiveCount) },
-    { name: "Indian Poker", path: "/indian-poker" },
-    { name: "Indian Poker II", path: "/indian-poker-2" },
-    { name: "RV Games", path: "/rv-games" },
-    {
-      name: "Aviator",
-      path: "/aviator",
-      icon: "/images/icons/aviator-icon.svg",
-    },
-    {
-      name: "Chicken Road",
-      path: "/chicken-road",
-      icon: "/images/icons/inout-icon.svg",
-    },
-    { name: "Ezugi", path: "/ezugi" },
-    { name: "Evolution", path: "/evolution" },
-    { name: "Live Casino", path: "/live-casino" },
-    { name: "Vivo", path: "/vivo" },
-    { name: "Betgames", path: "/betgames" },
-    { name: "Casino III", path: "/casino-3" },
-  ];
-
   return (
     <>
       {/* Top Banner */}
@@ -120,14 +150,14 @@ const Header = () => {
       {/* Main Header */}
       <header className="bg-[#0B5563] shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-3 w-full gap-2 md:gap-4">
+          <div className="flex items-center justify-between py-2 w-full gap-2 md:gap-4">
             {/* 1. Logo */}
             <div className="flex items-center shrink-0">
               <Link to="/" className="flex items-center space-x-2">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0">
                   <span className="text-[#0B5563] font-bold text-xl">R</span>
                 </div>
-                <span className="text-white font-bold text-3xl tracking-wider">
+                <span className="text-white font-bold text-2xl tracking-wider">
                   R777
                 </span>
               </Link>
@@ -135,7 +165,7 @@ const Header = () => {
 
             {/* 2. Desktop Navigation */}
             <div className="hidden md:flex items-center flex-1 min-w-0 mx-2 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-              <div className="flex items-center space-x-1.5 flex-nowrap min-w-max mx-auto">
+              <div className="flex items-center space-x-3 flex-nowrap mx-auto">
                 {navItems.map((item) => {
                   const isActive = location.pathname === item.path;
                   return (
@@ -143,31 +173,42 @@ const Header = () => {
                       key={item.name}
                       ref={isActive ? activeNavRef : null}
                       to={item.path}
-                      className={`whitespace-nowrap px-3 py-1.5 rounded-md text-xs xl:text-sm font-semibold transition-all duration-200 shrink-0 flex items-center space-x-1.5 ${
+                      className={`px-2 py-1.5 rounded-md transition-all duration-200 shrink-0 flex flex-col items-center justify-center group ${
                         isActive
-                          ? "bg-[#34D399] text-[#0B5563] shadow-md scale-105"
-                          : "text-white hover:bg-[#34D399]/20 hover:text-[#34D399] hover:border hover:border-[#34D399]/40"
+                          ? "bg-[#094753] text-[#34D399] font-bold"
+                          : "text-white hover:text-[#34D399]"
                       }`}
                     >
-                      {item.icon && (
-                        <img
-                          src={item.icon}
-                          alt={item.name}
-                          className="w-3.5 h-3.5 xl:w-4 xl:h-4 shrink-0"
-                        />
-                      )}
-                      <span>{item.name}</span>
-                      {item.badge && (
-                        <span
-                          className={`ml-1 px-1.5 py-0.2 text-[9px] xl:text-[10px] rounded-full font-bold uppercase shrink-0 ${
-                            isActive
-                              ? "bg-[#0B5563] text-white"
-                              : "bg-red-500 text-white"
-                          }`}
-                        >
-                          {item.badge}
-                        </span>
-                      )}
+                      {/* Icon Container with Floating Badge */}
+                      <div className="relative flex items-center justify-center pt-1">
+                        {item.iconKey && (
+                          <SportIcon name={item.iconKey} size={36} />
+                        )}
+                        {item.icon && (
+                          <img
+                            src={item.icon}
+                            alt={item.name}
+                            className="w-8 h-8 shrink-0 object-contain overflow-hidden"
+                          />
+                        )}
+
+                        {/* LIVE Badge attached to top-right of Icon */}
+                        {item.badge !== undefined && item.badge !== null && (
+                          <div className="absolute -top-1 -right-4 flex items-center overflow-hidden rounded-[3px] text-[9px] font-bold shadow-md z-10 leading-none">
+                            <span className="bg-white text-red-600 px-1 py-[2px] tracking-tighter">
+                              LIVE
+                            </span>
+                            <span className="bg-red-600 text-white px-1 py-[2px]">
+                              {item.badge}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Capitalized Name Below Icon */}
+                      <span className="text-[11px] font-extrabold uppercase tracking-wide mt-1 whitespace-nowrap">
+                        {item.name}
+                      </span>
                     </Link>
                   );
                 })}
@@ -209,7 +250,7 @@ const Header = () => {
                       <div className="relative">
                         <button
                           onClick={() => setUserMenuOpen(!userMenuOpen)}
-                          className="w-9 h-9 flex items-center justify-center bg-[#34D399] text-[#0B5563] hover:bg-[#34D399]/90 rounded-full transition shrink-0 shadow-md"
+                          className="w-9 h-9 flex items-center justify-center bg-[#34D399] text-[#0B5563] rounded-full hover:brightness-110 transition shrink-0 shadow-md"
                         >
                           <UserIcon size={18} />
                         </button>
@@ -226,7 +267,7 @@ const Header = () => {
                               {isAuthenticated && (
                                 <button
                                   onClick={() => setDrawerOpen(true)}
-                                  className={`w-full flex items-center space-x-2 px-4 py-3 text-sm text-white hover:bg-[#34D399]/15 transition`}
+                                  className="w-full flex items-center space-x-2 px-4 py-3 text-sm text-white hover:bg-[#34D399]/15 transition"
                                 >
                                   <Menu size={16} />
                                   <span>Account</span>
@@ -251,7 +292,7 @@ const Header = () => {
                     <div className="relative">
                       <button
                         onClick={() => setLangMenuOpen(!langMenuOpen)}
-                        className="flex items-center space-x-1.5 bg-[#0D6F7E] hover:bg-[#34D399]/20 hover:text-[#34D399] border border-[#2a95a8] rounded-full px-2.5 py-0.5 transition"
+                        className="flex items-center space-x-1.5 bg-[#0D6F7E] hover:text-[#34D399] border border-[#2a95a8] rounded-full px-2.5 py-0.5 hover:brightness-110 transition"
                       >
                         <img
                           src={
@@ -318,42 +359,45 @@ const Header = () => {
 
         {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden fixed inset-x-0 top-[112px] bottom-0 bg-[#0D6F7E] border-t border-[#0B5563] overflow-y-auto z-50">
+          <div className="md:hidden fixed inset-x-0 top-[121px] bottom-0 bg-[#0D6F7E] border-t border-[#0B5563] overflow-y-auto z-50">
             <nav className="flex flex-col space-y-1.5 p-4 pb-24">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
                   <Link
                     key={item.name}
-                    ref={isActive ? activeMobileNavRef : null} // Attach ref here
+                    ref={isActive ? activeMobileNavRef : null}
                     to={item.path}
-                    className={`flex items-center justify-between px-4 py-3 rounded-md text-sm font-semibold transition-all duration-200 ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-md text-xs uppercase font-bold transition-all duration-200 ${
                       isActive
                         ? "bg-[#34D399] text-[#0B5563] shadow-md"
-                        : "text-white hover:bg-[#34D399]/20 hover:text-[#34D399] hover:pl-6"
+                        : "text-white hover:bg-[#34D399]/20 hover:text-[#34D399]"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <div className="flex items-center space-x-2">
+                      {item.iconKey && (
+                        <SportIcon name={item.iconKey} size={22} />
+                      )}
                       {item.icon && (
                         <img
                           src={item.icon}
                           alt={item.name}
-                          className="w-4 h-4 shrink-0"
+                          className="w-5 h-5 shrink-0"
                         />
                       )}
                       <span>{item.name}</span>
                     </div>
-                    {item.badge && (
-                      <span
-                        className={`text-xs px-2 py-0.5 rounded-full font-bold ${
-                          isActive
-                            ? "bg-[#0B5563] text-white"
-                            : "bg-red-500 text-white"
-                        }`}
-                      >
-                        {item.badge}
-                      </span>
+
+                    {item.badge !== undefined && item.badge !== null && (
+                      <div className="flex items-center overflow-hidden rounded-[3px] text-[10px] font-bold">
+                        <span className="bg-white text-red-600 px-1.5 py-0.5">
+                          LIVE
+                        </span>
+                        <span className="bg-red-600 text-white px-1.5 py-0.5">
+                          {item.badge}
+                        </span>
+                      </div>
                     )}
                   </Link>
                 );
@@ -392,7 +436,6 @@ const Header = () => {
       </header>
 
       <AccountDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
-      {/* Dialogs */}
       <LoginDialog
         open={loginOpen}
         onOpenChange={setLoginOpen}

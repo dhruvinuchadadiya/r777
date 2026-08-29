@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import LoginDialog from "@/components/layout/LoginDialog";
+import BetSlipRow from "@/components/shared/bet-match/BetSlipRow";
+import OddsCell from "@/components/shared/bet-match/OddsCell";
+import { useAuth } from "@/core/context/AuthContext";
+import { matchesData } from "@/core/data/matchesData";
 import { Search } from "lucide-react";
-import { matchesData } from "../../data/matchesData";
-import { useAuth } from "../../context/AuthContext";
-import LoginDialog from "../layout/LoginDialog";
-import OddsCell from "../shared/bet-match/OddsCell";
-import BetSlipRow from "../shared/bet-match/BetSlipRow";
+import React, { useState } from "react";
 
 const SoccerPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
