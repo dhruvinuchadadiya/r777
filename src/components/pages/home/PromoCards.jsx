@@ -1,104 +1,109 @@
-import { promoCards } from "@/core/data/mockData";
-import { ChevronRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
+// Update with your local image paths
+const promoItems = [
+  { image: "/images/promo/bonus-1.webp", path: "/" },
+  { image: "/images/promo/bonus-2.webp", path: "/" },
+  { image: "/images/promo/bonus-3.webp", path: "/" },
+];
+
+// Update with your 2 GIF paths
+const gifItems = [
+  { image: "/images/promo/RDGIF-1.gif", path: "/" },
+  { image: "/images/promo/RDGIF-2.gif", path: "/" },
+];
+
+// 1. Two arrays are perfectly safe when managing the early reset check
+const extendedItems = [...promoItems, ...promoItems];
 
 const PromoCards = () => {
-  const getIcon = (iconType) => {
-    const icons = {
-      cricket: (
-        <svg
-          className="w-20 h-20 text-white"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-        >
-          <circle cx="12" cy="12" r="10" strokeWidth="2" />
-          <path d="M12 2 L12 22 M2 12 L22 12" strokeWidth="2" />
-        </svg>
-      ),
-      slot: (
-        <svg
-          className="w-20 h-20 text-white"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
-          <rect
-            x="4"
-            y="2"
-            width="16"
-            height="20"
-            rx="2"
-            fill="currentColor"
-            opacity="0.9"
-          />
-          <text
-            x="12"
-            y="14"
-            fontSize="14"
-            textAnchor="middle"
-            fill="white"
-            fontWeight="bold"
-          >
-            777
-          </text>
-        </svg>
-      ),
-      tennis: (
-        <svg
-          className="w-20 h-20 text-white"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-        >
-          <circle cx="12" cy="12" r="9" strokeWidth="2" />
-          <path
-            d="M12 3 Q18 12 12 21 M12 3 Q6 12 12 21"
-            strokeWidth="2"
-            fill="none"
-          />
-        </svg>
-      ),
-    };
-    return icons[iconType];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    timerRef.current = setInterval(() => {
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => prev + 1);
+    }, 3500);
+
+    return () => clearInterval(timerRef.current);
+  }, []);
+
+  // 2. Clear reset condition to prevent empty trailing items
+  const handleTransitionEnd = () => {
+    if (currentIndex >= promoItems.length) {
+      setIsTransitioning(false);
+      setCurrentIndex(0); // Snap instantly back to the first item
+    }
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {promoCards.map((card) => (
-          <div
-            key={card.id}
-            className="group relative bg-gradient-to-br from-[#00B4D8] to-[#0077B6] rounded-2xl p-8 overflow-hidden cursor-pointer transform hover:scale-105 transition duration-300 shadow-2xl"
+    <div className="bg-[#0b0b12] w-full max-w-7xl mx-auto px-2 sm:px-4 py-4 space-y-3 sm:space-y-4 ">
+      {/* Mobile & Tablet Slider */}
+      <div className="block md:hidden w-full overflow-hidden">
+        <div
+          className="flex"
+          onTransitionEnd={handleTransitionEnd}
+          style={{
+            // Shows two items at a time (each item is 50% width)
+            transform: `translateX(-${currentIndex * 50}%)`,
+            transition: isTransitioning
+              ? "transform 500ms ease-in-out"
+              : "none",
+          }}
+        >
+          {extendedItems.map((item, index) => (
+            <div
+              key={index}
+              className="w-1/2 shrink-0 px-1 sm:px-1.5 box-border"
+            >
+              <Link to={item.path} className="block w-full">
+                <img
+                  src={item.image}
+                  alt={`Promo Mobile ${index + 1}`}
+                  className="w-full h-auto object-contain block rounded-xl shadow-lg hover:scale-[1.02] transition duration-300"
+                  loading="lazy"
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Large Screens Static 3-Card Grid */}
+      <div className="hidden md:grid grid-cols-3 gap-4">
+        {promoItems.map((item, index) => (
+          <Link
+            key={index}
+            to={item.path}
+            className="w-full overflow-hidden rounded-xl shadow-lg hover:scale-[1.02] transition duration-300 block"
           >
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
-            </div>
+            <img
+              src={item.image}
+              alt={`Promo Desktop ${index + 1}`}
+              className="w-full h-auto object-contain block"
+            />
+          </Link>
+        ))}
+      </div>
 
-            {/* Content */}
-            <div className="relative z-10 flex items-center justify-between">
-              <div className="flex-1">
-                <h3 className="text-white text-3xl font-black mb-2 leading-tight">
-                  {card.title}
-                </h3>
-                <p className="text-white text-lg font-bold whitespace-pre-line">
-                  {card.subtitle}
-                </p>
-                <div className="mt-4">
-                  <span className="inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold backdrop-blur-sm">
-                    {card.category}
-                  </span>
-                </div>
-              </div>
-
-              <div className="ml-4 flex-shrink-0">{getIcon(card.icon)}</div>
-            </div>
-
-            {/* Arrow Button */}
-            <div className="absolute bottom-8 right-8 bg-white/20 p-3 rounded-full backdrop-blur-sm group-hover:bg-white/30 transition">
-              <ChevronRight className="text-white" size={28} />
-            </div>
-          </div>
+      {/* Bottom Section: 2 Side-by-Side GIFs with Redirection */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4">
+        {gifItems.map((item, idx) => (
+          <Link
+            key={idx}
+            to={item.path}
+            className="w-full overflow-hidden rounded-xl shadow-lg hover:brightness-105 transition block"
+          >
+            <img
+              src={item.image}
+              alt={`Featured GIF ${idx + 1}`}
+              className="w-full h-auto object-contain block"
+              loading="lazy"
+            />
+          </Link>
         ))}
       </div>
     </div>

@@ -269,40 +269,48 @@ export const gameProviders = [
     id: 1,
     name: "Evolution",
     logo: "/images/providers/evolution.png",
+    mbLogo: "/images/providers/mb-evolution.svg",
   },
   {
     id: 2,
     name: "Ezugi",
     logo: "/images/providers/ezugi.png",
+    mbLogo: "/images/providers/mb-ezugi.svg",
   },
   {
     id: 3,
     name: "Pragmatic Live",
     logo: "/images/providers/pragmatic-live.png",
+    mbLogo: "/images/providers/mb-pragmatic.svg",
   },
   {
     id: 4,
     name: "Betgames",
     logo: "/images/providers/betgames.png",
+    mbLogo: "/images/providers/mb-betgames.svg",
   },
   {
     id: 5,
     name: "Super Spade Games",
     logo: "/images/providers/ssg.png",
+    mbLogo: "/images/providers/mb-superspade.svg",
   },
   {
     id: 6,
     name: "Betsoft",
     logo: "/images/providers/betsoft.png",
+    mbLogo: "/images/providers/mb-betsoft.svg",
   },
   {
     id: 7,
     name: "Spribe",
     logo: "/images/providers/spribe.png",
+    mbLogo: "/images/providers/mb-spribe.svg",
   },
   {
     id: 8,
     name: "Evoplay",
     logo: "/images/providers/Evoplay.png",
+    mbLogo: "/images/providers/mb-evoplay.svg",
   },
 ];

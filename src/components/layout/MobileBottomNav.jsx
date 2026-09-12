@@ -1,12 +1,14 @@
-import AccountDrawer from "@/components/layout/AccountDrawer";
-import { useAuth } from "@/core/context/AuthContext";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../../core/context/AuthContext";
+import AccountDrawer from "./AccountDrawer";
+import LoginDialog from "./LoginDialog";
 
 const MobileBottomNav = () => {
   const location = useLocation();
   const { isAuthenticated } = useAuth();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
 
   const baseItems = [
     {
@@ -26,6 +28,14 @@ const MobileBottomNav = () => {
     },
   ];
 
+  const handleAccountDrawer = () => {
+    if (!isAuthenticated) {
+      setLoginOpen(true);
+      return;
+    }
+    setDrawerOpen(true);
+  };
+
   return (
     <>
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-[#0B5563] border-t border-[#0D6F7E] z-50">
@@ -36,41 +46,60 @@ const MobileBottomNav = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`flex flex-col items-center space-y-1 px-4 py-2 rounded-lg transition ${
-                  isActive ? "text-[#34D399]" : "text-white"
+                className={`group flex items-center px-3 py-1.5 rounded-full transition-all duration-200 shrink-0 ${
+                  isActive
+                    ? "bg-gradient-to-b from-[#5ecbdd] to-[#0d5563] border border-[#2a95a8] text-[#34D399] font-bold brightness-110"
+                    : "text-white hover:text-[#34D399] hover:bg-gradient-to-b hover:from-[#5ecbdd] hover:to-[#0d5563] hover:border hover:border-[#2a95a8] hover:font-bold hover:brightness-110"
                 }`}
               >
+                {/* Icon */}
                 {item.icon && (
                   <img
                     src={item.icon}
                     alt={item.name}
-                    className="w-6 h-6 xl:w-4 xl:h-4 shrink-0"
+                    className="w-5 h-5 shrink-0 object-contain"
                   />
                 )}
-                <span className="text-xs font-medium">{item.name}</span>
+
+                {/* Text: Hidden by default, visible when active or on hover */}
+                <span
+                  className={`text-xs ml-2 whitespace-nowrap ${
+                    isActive
+                      ? "inline-block"
+                      : "hidden group-hover:inline-block"
+                  }`}
+                >
+                  {item.name}
+                </span>
               </Link>
             );
           })}
 
-          {/* 4th button — only shown when logged in, opens account drawer */}
-          {isAuthenticated && (
-            <button
-              onClick={() => setDrawerOpen(true)}
-              className={`flex flex-col items-center space-y-1 px-4 py-2 rounded-lg transition ${
-                drawerOpen ? "text-[#34D399]" : "text-white"
+          <button
+            onClick={handleAccountDrawer}
+            className={`group flex items-center px-3 py-1.5 rounded-full transition-all duration-200 shrink-0 ${
+              drawerOpen
+                ? "bg-gradient-to-b from-[#1a7a8a] to-[#0d5563] border border-[#2a95a8] text-[#34D399] font-bold brightness-110"
+                : "text-white hover:text-[#34D399] hover:bg-gradient-to-b hover:from-[#5ecbdd] hover:to-[#0d5563] hover:border hover:border-[#2a95a8] hover:font-bold hover:brightness-110"
+            }`}
+          >
+            <img
+              src="/images/icons/menu.svg"
+              alt="Account"
+              className="w-5 h-5 shrink-0 object-contain"
+            />
+            <span
+              className={`text-xs ml-2 whitespace-nowrap ${
+                drawerOpen ? "inline-block" : "hidden group-hover:inline-block"
               }`}
             >
-              <img
-                src="/images/icons/menu.svg"
-                alt="Account"
-                className="w-6 h-6 xl:w-4 xl:h-4 shrink-0"
-              />
-              <span className="text-xs font-medium">Account</span>
-            </button>
-          )}
+              Account
+            </span>
+          </button>
         </div>
       </div>
 
+      <LoginDialog open={loginOpen} onOpenChange={setLoginOpen} />
       <AccountDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
     </>
   );

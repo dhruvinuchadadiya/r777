@@ -1,6 +1,6 @@
-import client, { setAccessToken } from "@/core/api/client";
-import { ENDPOINTS } from "@/core/config/endpoints";
-import { toUser } from "@/core/models/User";
+import client, { setAccessToken } from "../api/client";
+import { ENDPOINTS } from "../config/endpoints";
+import { toUser } from "../models/User";
 
 const getClientAddress = async () => {
   try {

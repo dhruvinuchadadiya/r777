@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_BASE_URL, ENDPOINTS } from "@/core/config/endpoints";
+import { API_BASE_URL, ENDPOINTS } from "../config/endpoints";
 
 const client = axios.create({
   baseURL: API_BASE_URL,

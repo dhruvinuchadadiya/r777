@@ -3,5 +3,8 @@
   "editor.codeActionsOnSave": {
     "source.addMissingImports": "always",
     "source.organizeImports": "always"
-  }
+  },
+  "javascript.implicitProjectConfig.checkJs": false,
+  "typescript.implicitProjectConfig.experimentalDecorators": true,
+  "js/ts.suggest.completeFunctionCalls": true
 }

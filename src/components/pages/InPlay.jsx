@@ -1,12 +1,13 @@
-import LoginDialog from "@/components/layout/LoginDialog";
-import SportIcon from "@/components/layout/SportIcon";
-import BetSlipRow from "@/components/shared/bet-match/BetSlipRow";
-import OddsCell from "@/components/shared/bet-match/OddsCell";
-import { useAuth } from "@/core/context/AuthContext";
-import { getSportLiveCount, matchesData } from "@/core/data/matchesData";
 import { ChevronRight, Search } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../core/context/AuthContext";
+import { getSportLiveCount } from "../../core/data/liveMatches";
+import { matchesData } from "../../core/data/matchesData";
+import LoginDialog from "../layout/LoginDialog";
+import SportIcon from "../layout/SportIcon";
+import BetSlipRow from "../shared/bet-match/BetSlipRow";
+import OddsCell from "../shared/bet-match/OddsCell";
 
 const InPlayPage = () => {
   const [activeTab, setActiveTab] = useState("all"); // "live" | "all" | "cricket" | "soccer" | "tennis"

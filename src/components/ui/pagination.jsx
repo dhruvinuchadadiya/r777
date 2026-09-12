@@ -1,8 +1,7 @@
-import * as React from "react";
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/componen@/components/ui/button";
+import * as React from "react";
+import { cn } from "../../core/lib/utils";
+import { buttonVariants } from "./button";
 
 const Pagination = ({ className, ...props }) => (
   <nav
@@ -84,9 +83,9 @@ PaginationEllipsis.displayName = "PaginationEllipsis";
 export {
   Pagination,
   PaginationContent,
-  PaginationLink,
-  PaginationItem,
-  PaginationPrevious,
-  PaginationNext,
   PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
 };

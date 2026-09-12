@@ -1,4 +1,3 @@
-import { useToast } from "@/hooks/use-toast";
 import {
   Toast,
   ToastClose,
@@ -6,7 +5,8 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "@/componen@/components/ui/toast";
+} from "@radix-ui/react-toast";
+import { useToast } from "../../core/hooks/use-toast";
 
 export function Toaster() {
   const { toasts } = useToast();

@@ -4,7 +4,14 @@
     "ignoreDeprecations": "6.0",
     "paths": {
       "@/*": ["*"]
-    }
+    },
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "target": "ES2020",
+    "jsx": "react-jsx",
+    // Check type define
+    "checkJs": false,
+    "strict": true
   },
   "exclude": ["node_modules", "build", "dist"]
 }

@@ -1,4 +1,3 @@
-import { useAuth } from "@/core/context/AuthContext";
 import {
   BookOpen,
   CheckSquare,
@@ -14,6 +13,7 @@ import {
 } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../../core/context/AuthContext";
 
 const menuItems = [
   { name: "Account Statement", path: "/account-statement", icon: FileText },

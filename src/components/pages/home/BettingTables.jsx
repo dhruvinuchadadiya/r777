@@ -1,11 +1,11 @@
-import LoginDialog from "@/components/layout/LoginDialog";
-import BetSlipRow from "@/components/shared/bet-match/BetSlipRow";
-import OddsCell from "@/components/shared/bet-match/OddsCell";
-import { useAuth } from "@/core/context/AuthContext";
-import { matchesData } from "@/core/data/matchesData";
 import { ChevronRight, Tv } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../core/context/AuthContext";
+import { matchesData } from "../../../core/data/matchesData";
+import LoginDialog from "../../layout/LoginDialog";
+import BetSlipRow from "../../shared/bet-match/BetSlipRow";
+import OddsCell from "../../shared/bet-match/OddsCell";
 
 const BettingTables = () => {
   const [selectedBet, setSelectedBet] = useState(null); // { matchId, selection, type }
@@ -42,10 +42,10 @@ const BettingTables = () => {
   };
 
   return (
-    <div className="bg-[#0b0b12] py-12">
+    <div className="bg-[#0b0b12]">
       <LoginDialog open={loginOpen} onOpenChange={setLoginOpen} />
 
-      <div className="container mx-auto px-4 space-y-6">
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-4 space-y-3 sm:space-y-4 bg-transparent">
         {/* Cricket Table */}
         <div className="bg-[#1a1a2e] rounded-lg shadow-lg overflow-hidden border border-[#2a2a40]">
           <div className="flex items-center justify-between bg-[#151522] px-4 py-2.5 border-b border-[#2d2d44]">

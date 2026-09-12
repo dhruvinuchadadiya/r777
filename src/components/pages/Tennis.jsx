@@ -1,10 +1,10 @@
-import LoginDialog from "@/components/layout/LoginDialog";
-import BetSlipRow from "@/components/shared/bet-match/BetSlipRow";
-import OddsCell from "@/components/shared/bet-match/OddsCell";
-import { useAuth } from "@/core/context/AuthContext";
-import { matchesData } from "@/core/data/matchesData";
 import { Search, Tv } from "lucide-react";
 import React, { useState } from "react";
+import { useAuth } from "../../core/context/AuthContext";
+import { matchesData } from "../../core/data/matchesData";
+import LoginDialog from "../layout/LoginDialog";
+import BetSlipRow from "../shared/bet-match/BetSlipRow";
+import OddsCell from "../shared/bet-match/OddsCell";
 
 const TennisPage = () => {
   const [searchQuery, setSearchQuery] = useState("");

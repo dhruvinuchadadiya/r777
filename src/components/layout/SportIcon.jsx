@@ -4,16 +4,27 @@ const ORIGINAL_FRAME_SIZE = 36;
 const RAW_Y_OFFSETS = {
   home: -2082,
   inPlay: -1965.5,
-  hundredCup: -2278,
-  cricket: -420.5,
-  soccer: -1319.5,
+  hundredCup: -2284,
+  cricket: -418.7,
+  soccer: -1318.8,
   tennis: -1409.5,
   poker: -1109,
-  pokerII: -2237,
+  pokerII: -2239,
   rvGames: -2195,
   allGames: -599,
 };
 
+/**
+ * @typedef {{
+ *   name: keyof typeof RAW_Y_OFFSETS,
+ *   size?: number,
+ *   className?: string,
+ * }} SportIconProps
+ */
+
+/**
+ * @param {SportIconProps} props
+ */
 export default function SportIcon({ name, size = 18, className = "" }) {
   const rawY = RAW_Y_OFFSETS[name];
 
@@ -28,7 +39,7 @@ export default function SportIcon({ name, size = 18, className = "" }) {
       className={`react-sports-icon ${className}`}
       style={{
         width: `${size}px`,
-        height: `${size - 4.5}px`,
+        height: `${size - 4.8}px`,
         backgroundSize: `${size}px auto`,
         backgroundPosition: `0px ${scaledY}px`,
       }}

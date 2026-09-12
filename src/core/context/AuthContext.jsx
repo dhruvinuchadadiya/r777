@@ -1,7 +1,7 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { authService } from "@/core/services/authService";
-import { setAccessToken } from "@/core/api/client";
-import { STORAGE_KEYS } from "@/core/constants/storageKeys";
+import { createContext, useContext, useEffect, useState } from "react";
+import { setAccessToken } from "../api/client";
+import { STORAGE_KEYS } from "../constants/storageKeys";
+import { authService } from "../services/authService";
 
 const AuthContext = createContext(null);
 

@@ -1,15 +1,19 @@
-/* src/styles/animations.css */
-
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
-.animate-marquee {
-  display: inline-block;
+.ticker-track {
+  display: flex;
+  width: max-content;
   animation: marquee 25s linear infinite;
+}
+
+/* Pause scrolling when user hovers (optional, remove if not wanted) */
+.ticker-track:hover {
+  animation-play-state: paused;
 }

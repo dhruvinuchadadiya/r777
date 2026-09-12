@@ -1,11 +1,9 @@
-import { gameProviders } from "@/core/data/mockData";
-
 const GameProviders = () => {
   return (
-    <div className="bg-gradient-to-b from-[#1a1a2e] to-[#0f0f1e] py-12">
-      <div className="container mx-auto px-4">
+    <div className="bg-[#0b0b12]">
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 pb-4 bg-transparent">
         {/* Banner */}
-        <div className="mb-8 rounded-xl overflow-hidden">
+        <div className="rounded-xl overflow-hidden">
           <img
             src="https://images.staticcontent.io/rde/login/r77/pg-banner.webp"
             alt="Promotional Banner"
@@ -14,7 +12,7 @@ const GameProviders = () => {
         </div>
 
         {/* Desktop Providers */}
-        <div className="hidden md:flex items-center justify-center space-x-8 mb-8">
+        {/* <div className="hidden md:flex items-center justify-center space-x-8 mb-8 max-w-3xl mx-auto">
           {gameProviders.map((provider) => (
             <div
               key={provider.id}
@@ -34,10 +32,10 @@ const GameProviders = () => {
               className="h-12 w-auto object-contain"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Mobile Providers */}
-        <div className="md:hidden grid grid-cols-3 gap-4 mb-8">
+        {/* <div className="md:hidden grid grid-cols-3 gap-4 mb-8 max-w-3xl mx-auto">
           {gameProviders.map((provider) => (
             <div
               key={provider.id}
@@ -57,17 +55,17 @@ const GameProviders = () => {
               className="h-10 w-auto object-contain"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Disclaimer */}
-        <div className="text-center text-gray-400 text-sm max-w-3xl mx-auto">
+        {/* <div className="text-center text-gray-400 text-sm">
           <p>
             You must be over 18 years old, or the legal age at which gambling or
             gaming activities are allowed under the law or jurisdiction that
             applies to you. You must reside in a country in which access to
             online gambling to its residents.
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
