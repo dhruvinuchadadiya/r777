@@ -20,7 +20,11 @@ const BetSlipRow = ({
     <tr>
       <td
         colSpan={colSpan}
-        className="bg-[#0f0f1c] border-t border-b border-[#2d2d44] p-4"
+        className={`${
+          selectedBet.type === "back"
+            ? "bg-[#cbe9ff] text-slate-900"
+            : "bg-[#ffe6ec] text-slate-900"
+        } border-t border-b p-4`}
       >
         <div
           className={`flex items-center justify-between p-2 rounded-lg mb-3 ${
@@ -45,9 +49,9 @@ const BetSlipRow = ({
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5">
           <div>
-            <label className="text-xs text-gray-400 block mb-1">Odds</label>
+            <label className="text-xs block mb-1">Odds</label>
             <div className="flex items-center bg-[#141422] rounded border border-[#33334d]">
               <button
                 onClick={() =>
@@ -80,9 +84,7 @@ const BetSlipRow = ({
           </div>
 
           <div>
-            <label className="text-xs text-gray-400 block mb-1">
-              Stake ($)
-            </label>
+            <label className="text-xs block mb-1">Stake ($)</label>
             <div className="flex items-center bg-[#141422] rounded border border-[#33334d]">
               <button
                 onClick={() => setStakeValue((prev) => Math.max(0, prev - 50))}
@@ -108,9 +110,7 @@ const BetSlipRow = ({
           </div>
 
           <div>
-            <label className="text-xs text-gray-400 block mb-1">
-              Est. Profit
-            </label>
+            <label className="text-xs block mb-1">Est. Profit</label>
             <div className="bg-[#141422] rounded border border-[#33334d] py-2.5 text-center">
               <span className="text-emerald-400 font-bold text-sm">
                 ${((oddsValue - 1) * stakeValue).toFixed(2)}
@@ -124,20 +124,20 @@ const BetSlipRow = ({
             <button
               key={amt}
               onClick={() => setStakeValue((prev) => prev + amt)}
-              className="py-1 bg-[#2b2b42] hover:bg-[#3d3d5c] text-xs font-semibold rounded text-gray-200 transition"
+              className="py-1 bg-[#2b2b42] hover:brightness-125 text-xs font-semibold rounded text-gray-200 transition"
             >
               +{amt}
             </button>
           ))}
           <button
             onClick={() => setStakeValue(maxBalance || 1000)}
-            className="py-1 bg-[#2b2b42] hover:bg-[#3d3d5c] text-xs font-semibold rounded text-yellow-400 transition"
+            className="py-1 bg-[#2b2b42] hover:brightness-125 text-xs font-semibold rounded text-green-200 transition"
           >
             ALL
           </button>
           <button
             onClick={() => setStakeValue(0)}
-            className="col-span-2 py-1 bg-red-900/40 hover:bg-red-800/60 text-xs font-semibold rounded text-red-300 transition"
+            className="py-1 bg-red-500 hover:brightness-125 text-xs font-semibold rounded text-gray-200 transition"
           >
             CLEAR
           </button>
@@ -145,11 +145,7 @@ const BetSlipRow = ({
 
         <button
           onClick={onPlaceBet}
-          className={`w-full mt-4 py-2.5 font-black text-slate-950 rounded-lg transition ${
-            selectedBet.type === "back"
-              ? "bg-[#72bbef] hover:bg-[#5aaae5]"
-              : "bg-[#faa9ba] hover:bg-[#f891a6]"
-          }`}
+          className={`w-full mt-4 py-2.5 font-black text-white rounded-lg transition bg-green-500 hover:brightness-110`}
         >
           {buttonLabel}
         </button>

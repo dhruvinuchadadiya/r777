@@ -16,7 +16,7 @@ import { AuthProvider } from "./core/context/AuthContext";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen bg-[#0f0f1e]">
+    <div className="min-h-screen">
       <Header />
       <HeroCarousel />
       <PromoCards />

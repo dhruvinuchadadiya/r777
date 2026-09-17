@@ -211,45 +211,53 @@ const Header = () => {
         </div>
 
         {/* Main Header */}
-        <header className="bg-gradient-to-b from-[#022c43] to-[#18b0c8]">
-          <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 bg-transparent">
-            <div className="flex items-center justify-between py-2 w-full gap-2 md:gap-4">
-              <div className="flex items-center shrink-0">
+        {/* Main Header */}
+        {/* FIXED: Removed overflow-hidden so absolute dropdowns are fully visible over rest of the content */}
+        <header className="bg-gradient-to-b from-[#022c43] to-[#18b0c8] w-full relative z-40">
+          <div className="w-full max-w-7xl mx-auto px-1.5 sm:px-4 bg-transparent">
+            <div className="flex items-center justify-between py-2 w-full gap-1.5 sm:gap-3">
+              {/* LEFT SECTION: Menu & Brand Logo */}
+              <div className="flex items-center shrink min-w-0">
                 <button
-                  className="md:hidden text-white shrink-0 mr-1 pr-1 py-1 focus:outline-none"
+                  className="md:hidden text-white shrink-0 mr-1 p-0.5 focus:outline-none"
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
-                  {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+                  {mobileMenuOpen ? (
+                    <X size={22} className="sm:w-[26px] sm:h-[26px]" />
+                  ) : (
+                    <Menu size={22} className="sm:w-[26px] sm:h-[26px]" />
+                  )}
                 </button>
 
-                <Link to="/" className="flex items-center space-x-2">
+                <Link to="/" className="flex items-center min-w-0">
                   <img
                     src="/images/logo/brand_logo.svg"
                     alt="R777 Logo"
-                    className="h-14 w-auto object-contain"
+                    className="h-10 sm:h-12 md:h-14 w-auto object-contain max-w-full"
                   />
                 </Link>
               </div>
 
-              <div className="flex items-center justify-end space-x-2 md:space-x-3 shrink-0 ml-auto">
+              {/* RIGHT SECTION: User Metrics & Multi-row Controls */}
+              <div className="flex items-center justify-end gap-1.5 sm:gap-3 shrink min-w-0 ml-auto">
                 {isAuthenticated ? (
-                  <div className="flex items-center space-x-2 md:space-x-3">
-                    {/* Left Column: Balance & Exposure styled as clean data details (Non-button look) */}
-                    <div className="flex flex-col space-y-0.5 shrink-0 px-4 py-2 bg-black/20 rounded-md border border-white/5">
-                      <div className="flex items-center space-x-1.5">
+                  <div className="flex items-center gap-1.5 sm:gap-3 min-w-0">
+                    {/* Left Column: Balance & Exposure Profile Box */}
+                    <div className="flex flex-col space-y-0.5 shrink min-w-0 px-2 sm:px-4 py-1.5 bg-black/20 rounded-md border border-white/5">
+                      <div className="flex items-center space-x-1 sm:space-x-1.5 min-w-0">
                         <Coins
-                          size={13}
-                          className="text-yellow-400 fill-yellow-400 shrink-0"
+                          size={12}
+                          className="text-yellow-400 fill-yellow-400 shrink-0 sm:w-[13px] sm:h-[13px]"
                         />
-                        <span className="text-white font-medium text-xs tracking-tight">
+                        <span className="text-white font-medium text-[11px] sm:text-xs tracking-tight truncate">
                           {(user?.balance ?? 0).toFixed(2)}
                         </span>
                       </div>
-                      <div className="flex items-center space-x-1">
-                        <span className="text-white/70 text-[10px] uppercase font-medium">
+                      <div className="flex items-center space-x-0.5 sm:space-x-1 min-w-0">
+                        <span className="text-white/70 text-[9px] sm:text-[10px] uppercase font-medium shrink-0">
                           Exp:
                         </span>
-                        <span className="text-white font-medium text-xs tracking-tight">
+                        <span className="text-white font-medium text-[11px] sm:text-xs tracking-tight truncate">
                           {(user?.exposureLimit ?? 0).toFixed(2)}
                         </span>
                       </div>
@@ -259,10 +267,13 @@ const Header = () => {
                     <div className="flex flex-col space-y-1 shrink-0 items-end">
                       {/* Top Row: Notifications & Profile Icon */}
                       <div className="flex items-center space-x-1.5">
-                        <button className="relative w-7 h-7 flex items-center justify-center bg-gradient-to-b from-[#1a7a8a] to-[#0d5563] border border-[#2a95a8] rounded-full hover:brightness-110 transition shrink-0">
-                          <Bell size={12} className="text-white" />
+                        <button className="relative w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center bg-gradient-to-b from-[#1a7a8a] to-[#0d5563] border border-[#2a95a8] rounded-full hover:brightness-110 transition shrink-0">
+                          <Bell
+                            size={11}
+                            className="text-white sm:w-[12px] sm:h-[12px]"
+                          />
                           {notificationCount > 0 && (
-                            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
+                            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[8px] sm:text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
                               {notificationCount}
                             </span>
                           )}
@@ -271,9 +282,12 @@ const Header = () => {
                         <div className="relative" ref={userMenuRef}>
                           <button
                             onClick={() => setUserMenuOpen(!userMenuOpen)}
-                            className="w-7 h-7 flex items-center justify-center bg-[#34D399] text-[#0B5563] rounded-full hover:brightness-110 transition shrink-0 shadow-md"
+                            className="w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center bg-[#34D399] text-[#0B5563] rounded-full hover:brightness-110 transition shrink-0 shadow-md"
                           >
-                            <UserIcon size={12} />
+                            <UserIcon
+                              size={11}
+                              className="sm:w-[12px] sm:h-[12px]"
+                            />
                           </button>
 
                           {userMenuOpen && (
@@ -311,11 +325,11 @@ const Header = () => {
                         </div>
                       </div>
 
-                      {/* Bottom Row: Language Selector tucked neatly underneath */}
+                      {/* Bottom Row: Language Selector */}
                       <div className="relative" ref={langMenuRef}>
                         <button
                           onClick={() => setLangMenuOpen(!langMenuOpen)}
-                          className="flex items-center space-x-1 bg-[#0D6F7E] hover:text-[#34D399] border border-[#2a95a8] rounded-full px-2 py-0.5 hover:brightness-110 transition"
+                          className="flex items-center space-x-1 bg-[#0D6F7E] hover:text-[#34D399] border border-[#2a95a8] rounded-full px-1.5 sm:px-2 py-0.5 hover:brightness-110 transition"
                         >
                           <img
                             src={
@@ -323,14 +337,14 @@ const Header = () => {
                                 ?.flag
                             }
                             alt={selectedLang}
-                            className="w-4 h-3 rounded-sm"
+                            className="w-3.5 h-2.5 sm:w-4 sm:h-3 rounded-sm object-cover"
                           />
-                          <span className="text-white text-[10px] font-medium">
+                          <span className="text-white text-[9px] sm:text-[10px] font-medium">
                             {selectedLang}
                           </span>
                           <ChevronDown
-                            size={10}
-                            className={`text-white transition-transform ${
+                            size={9}
+                            className={`text-white transition-transform sm:w-[10px] sm:h-[10px] ${
                               langMenuOpen ? "rotate-180" : ""
                             }`}
                           />
@@ -363,10 +377,10 @@ const Header = () => {
                 ) : (
                   // Unauthenticated View
                   <Button
-                    className="flex items-center gap-1 w-[84px] h-[32px] bg-gradient-to-b from-[#1a7a8a] to-[#0d5563] border border-[#2a95a8] rounded-full hover:brightness-110 transition shrink-0"
+                    className="flex items-center gap-1 w-16 h-6 sm:w-[84px] sm:h-[32px] bg-gradient-to-b from-[#1a7a8a] to-[#0d5563] border border-[#2a95a8] rounded-full hover:brightness-110 transition shrink-0 font-medium text-[10px] sm:text-xs"
                     onClick={() => setLoginOpen(true)}
                   >
-                    <UserIcon size={14} />
+                    <UserIcon size={9} className="sm:w-[12px] sm:h-[12px]" />
                     LOG IN
                   </Button>
                 )}

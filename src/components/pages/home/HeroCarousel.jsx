@@ -4,6 +4,9 @@ const bannerImages = [
   "/images/hero/main-banner0.webp",
   "/images/hero/main-banner1.webp",
   "/images/hero/main-banner2.webp",
+  "/images/hero/main-banner3.webp",
+  "/images/hero/main-banner4.webp",
+  "/images/hero/main-banner5.webp",
 ];
 
 const HeroCarousel = () => {
@@ -67,7 +70,7 @@ const HeroCarousel = () => {
 
   return (
     <div
-      className="relative w-full overflow-hidden select-none bg-[#0B5563] touch-pan-y"
+      className="relative w-full overflow-hidden select-none touch-pan-y"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -99,7 +102,7 @@ const HeroCarousel = () => {
             onClick={() => goToSlide(index)}
             className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? "w-4 sm:w-6 bg-[#34D399]"
+                ? "w-4 sm:w-6 bg-white"
                 : "w-1.5 sm:w-2 bg-white/50 hover:bg-white/80"
             }`}
             aria-label={`Go to slide ${index + 1}`}

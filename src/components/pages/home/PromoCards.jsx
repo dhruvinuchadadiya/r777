@@ -40,9 +40,9 @@ const PromoCards = () => {
   };
 
   return (
-    <div className="bg-[#0b0b12] w-full max-w-7xl mx-auto px-2 sm:px-4 py-4 space-y-3 sm:space-y-4 ">
+    <div className="w-full max-w-7xl mx-auto px-1 sm:px-2 pt-1 md:pt-2 space-y-1 sm:space-y-2 ">
       {/* Mobile & Tablet Slider */}
-      <div className="block md:hidden w-full overflow-hidden">
+      <div className="block md:hidden w-full overflow-hidden gap-1 sm:gap-2">
         <div
           className="flex"
           onTransitionEnd={handleTransitionEnd}
@@ -57,13 +57,13 @@ const PromoCards = () => {
           {extendedItems.map((item, index) => (
             <div
               key={index}
-              className="w-1/2 shrink-0 px-1 sm:px-1.5 box-border"
+              className="w-1/2 shrink-0 px-0.5 sm:px-1 box-border"
             >
               <Link to={item.path} className="block w-full">
                 <img
                   src={item.image}
                   alt={`Promo Mobile ${index + 1}`}
-                  className="w-full h-auto object-contain block rounded-xl shadow-lg hover:scale-[1.02] transition duration-300"
+                  className="w-full h-auto object-contain block rounded-sm shadow-lg hover:scale-[1.02] transition duration-300"
                   loading="lazy"
                 />
               </Link>
@@ -73,12 +73,12 @@ const PromoCards = () => {
       </div>
 
       {/* Large Screens Static 3-Card Grid */}
-      <div className="hidden md:grid grid-cols-3 gap-4">
+      <div className="hidden md:grid grid-cols-3 !mt-[0px] gap-1 sm:gap-2">
         {promoItems.map((item, index) => (
           <Link
             key={index}
             to={item.path}
-            className="w-full overflow-hidden rounded-xl shadow-lg hover:scale-[1.02] transition duration-300 block"
+            className="w-full overflow-hidden rounded-sm shadow-lg hover:scale-[1.02] transition duration-300 block"
           >
             <img
               src={item.image}
@@ -90,12 +90,12 @@ const PromoCards = () => {
       </div>
 
       {/* Bottom Section: 2 Side-by-Side GIFs with Redirection */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-1 sm:gap-2">
         {gifItems.map((item, idx) => (
           <Link
             key={idx}
             to={item.path}
-            className="w-full overflow-hidden rounded-xl shadow-lg hover:brightness-105 transition block"
+            className="w-full overflow-hidden rounded-sm shadow-lg hover:brightness-105 transition block"
           >
             <img
               src={item.image}

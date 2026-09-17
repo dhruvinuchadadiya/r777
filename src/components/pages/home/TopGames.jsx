@@ -23,12 +23,12 @@ const TopGames = () => {
   const getItemStepWidth = () => {
     if (!itemRef.current || !scrollContainerRef.current) return 0;
 
-    // Get the element width (w-28 or w-32 depending on screen size)
+    // Correctly reads whatever calculated fluid % width the browser assigned to the card
     const elementWidth = itemRef.current.getBoundingClientRect().width;
 
-    // Read the actual column gap from the container style (space-x-4 = 16px)
+    // Read the actual column gap from the container style (space-x-2 = 8px)
     const computedStyle = window.getComputedStyle(scrollContainerRef.current);
-    const gap = parseFloat(computedStyle.columnGap) || 16;
+    const gap = parseFloat(computedStyle.columnGap) || 8;
 
     return elementWidth + gap;
   };
@@ -48,6 +48,16 @@ const TopGames = () => {
     }
   }, [currentIndex]);
 
+  // Recalculate if user rotates screen or resizes window
+  useEffect(() => {
+    const handleResize = () => {
+      // Re-trigger placement calculations based on new fluid item widths
+      setCurrentIndex((prev) => prev);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleScroll = () => {
     const container = scrollContainerRef.current;
     if (!container) return;
@@ -55,7 +65,6 @@ const TopGames = () => {
     const stepWidth = getItemStepWidth();
     const singleSetWidth = topGames.length * stepWidth;
 
-    // Check if we scrolled past the original set of items minus a small pixel tolerance buffer
     if (container.scrollLeft >= singleSetWidth - 2 && !isResettingRef.current) {
       isResettingRef.current = true;
       setCurrentIndex(0);
@@ -63,43 +72,38 @@ const TopGames = () => {
   };
 
   return (
-    <div className="bg-[#0b0b12]">
-      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-4 space-y-3 sm:space-y-4 bg-transparent">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-white text-3xl font-bold">Top Games</h2>
-        </div>
+    <div className="w-full max-w-7xl mx-auto px-1 sm:px-2 pt-1 md:pt-2 space-y-1 sm:space-y-2">
+      <div className="flex items-center justify-between mb-0 md:mb-1">
+        <h4 className="text-black text-base font-bold">Top Games</h4>
+      </div>
 
-        <div
-          ref={scrollContainerRef}
-          onScroll={handleScroll}
-          className="flex space-x-4 overflow-x-auto scrollbar-hide"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {extendedGames.map((game, index) => (
-            <div
-              key={`${game.id}-${index}`}
-              // Attach ref to the very first item to measure it
-              ref={index === 0 ? itemRef : null}
-              className="flex-shrink-0 w-20 sm:w-28 md:w-32 group cursor-pointer"
-            >
-              <div className="relative overflow-hidden rounded-lg shadow-xl transform group-hover:scale-105 transition duration-300 bg-neutral-900">
-                <img
-                  src={game.image}
-                  alt={game.name}
-                  className="w-full h-14 sm:h-20 md:h-24 object-contain block"
-                />
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center pb-4">
-                  <button className="bg-white text-[#0B5563] px-4 py-2 rounded-full font-semibold text-sm hover:bg-gray-100 transition">
-                    Play Now
-                  </button>
-                </div> */}
-              </div>
-              <p className="text-white text-center mt-3 font-medium text-sm md:text-base">
-                {game.name}
-              </p>
+      <div
+        ref={scrollContainerRef}
+        onScroll={handleScroll}
+        className="flex space-x-2 overflow-x-auto scrollbar-hide"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {extendedGames.map((game, index) => (
+          <div
+            key={`${game.id}-${index}`}
+            ref={index === 0 ? itemRef : null}
+            /* 
+              UPDATED UTILITIES:
+              - Base screen: w-[calc(25%-6px)]   -> Exactly 4 items visible
+              - sm screen:   w-[calc(20%-6.4px)] -> Exactly 5 items visible
+              - md screen:   w-[calc(16.666%-6.7px)] -> Exactly 6 items visible
+            */
+            className="flex-shrink-0 max-w-[calc(25%-6px)] sm:max-w-[calc(20%-6.4px)] md:max-w-[calc(16.666%-6.7px)] group cursor-pointer"
+          >
+            <div className="relative overflow-hidden rounded-sm shadow-xl transform group-hover:scale-105 transition duration-300 bg-neutral-900">
+              <img
+                src={game.image}
+                alt={game.name}
+                className="w-full max-h-14 sm:max-h-20 md:max-h-24 object-contain block"
+              />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

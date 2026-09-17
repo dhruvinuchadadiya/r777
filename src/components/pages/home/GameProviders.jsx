@@ -1,18 +1,17 @@
 const GameProviders = () => {
   return (
-    <div className="bg-[#0b0b12]">
-      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 pb-4 bg-transparent">
-        {/* Banner */}
-        <div className="rounded-xl overflow-hidden">
-          <img
-            src="https://images.staticcontent.io/rde/login/r77/pg-banner.webp"
-            alt="Promotional Banner"
-            className="w-full h-auto"
-          />
-        </div>
+    <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 pb-4 bg-transparent">
+      {/* Banner */}
+      <div className="rounded-xl overflow-hidden">
+        <img
+          src="https://images.staticcontent.io/rde/login/r77/pg-banner.webp"
+          alt="Promotional Banner"
+          className="w-full h-auto"
+        />
+      </div>
 
-        {/* Desktop Providers */}
-        {/* <div className="hidden md:flex items-center justify-center space-x-8 mb-8 max-w-3xl mx-auto">
+      {/* Desktop Providers */}
+      {/* <div className="hidden md:flex items-center justify-center space-x-8 mb-8 max-w-3xl mx-auto">
           {gameProviders.map((provider) => (
             <div
               key={provider.id}
@@ -34,8 +33,8 @@ const GameProviders = () => {
           </div>
         </div> */}
 
-        {/* Mobile Providers */}
-        {/* <div className="md:hidden grid grid-cols-3 gap-4 mb-8 max-w-3xl mx-auto">
+      {/* Mobile Providers */}
+      {/* <div className="md:hidden grid grid-cols-3 gap-4 mb-8 max-w-3xl mx-auto">
           {gameProviders.map((provider) => (
             <div
               key={provider.id}
@@ -57,8 +56,8 @@ const GameProviders = () => {
           </div>
         </div> */}
 
-        {/* Disclaimer */}
-        {/* <div className="text-center text-gray-400 text-sm">
+      {/* Disclaimer */}
+      {/* <div className="text-center text-gray-400 text-sm">
           <p>
             You must be over 18 years old, or the legal age at which gambling or
             gaming activities are allowed under the law or jurisdiction that
@@ -66,7 +65,6 @@ const GameProviders = () => {
             online gambling to its residents.
           </p>
         </div> */}
-      </div>
     </div>
   );
 };
