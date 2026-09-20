@@ -42,35 +42,39 @@ const BettingTables = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-4 space-y-3 sm:space-y-4 bg-transparent">
+    <div className="w-full max-w-7xl mx-auto px-1 sm:px-2 py-2 space-y-1 sm:space-y-2">
       <LoginDialog open={loginOpen} onOpenChange={setLoginOpen} />
       {/* Cricket Table */}
       <div className="rounded-none shadow-lg overflow-hidden">
         <div className="flex items-center justify-between bg-[#18adc5] text-white px-2 py-1">
-          <h2 className="text-base font-bold">Cricket</h2>
+          <h2 className="text-sm md:text-base font-bold">Cricket</h2>
           <Link
             to="/cricket"
-            className="flex items-center text-xs hover:text-black font-semibold transition"
+            className="flex items-center text-sm md:text-base hover:text-black font-semibold transition"
           >
             View More
             <ChevronRight size={14} className="ml-1" />
           </Link>
         </div>
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
-            <thead className="text-xs uppercase border-b">
+
+        {/* CHANGED: Added scrollbars if cell min-widths exceed ultra-small mobile screen footprints */}
+        <div className="overflow-x-auto scrollbar-hide">
+          <table className="w-full text-left text-sm block sm:table">
+            <thead className="hidden sm:table-header-group text-xs uppercase border-b">
               <tr>
                 <th className="px-2 py-1"></th>
-                <th className="px-2 py-1 text-center w-24">1</th>
-                <th className="px-2 py-1 text-center w-24">X</th>
-                <th className="px-2 py-1 text-center w-24">2</th>
+                <div className="grid grid-cols-[repeat(3,minmax(96px,1fr))] gap-1 w-full">
+                  <th className="px-2 py-1 text-center w-24">1</th>
+                  <th className="px-2 py-1 text-center w-24">X</th>
+                  <th className="px-2 py-1 text-center w-24">2</th>
+                </div>
               </tr>
             </thead>
-            <tbody className="divide-y">
+            <tbody className="divide-y block sm:table-row-group">
               {matchesData.cricket.map((match) => (
                 <React.Fragment key={match.id}>
-                  <tr className="transition">
-                    <td className="px-2 py-1">
+                  <tr className="flex flex-col sm:table-row p-2 sm:p-0 bg-transparent transition">
+                    <td className="block sm:table-cell px-1 pt-1 md:pb-1 w-full">
                       <div className="text-xs mb-0.5 flex items-center gap-2">
                         <span>
                           {match.date} | {match.league}
@@ -84,31 +88,36 @@ const BettingTables = () => {
                           </span>
                         )}
                       </div>
-                      <div className="font-semibold">
+                      <div className="font-semibold text-sm">
                         {match.team1} v {match.team2}
                       </div>
                     </td>
-                    <OddsCell
-                      matchId={match.id}
-                      selectionName={match.team1}
-                      odds={match.odds.team1}
-                      selectedBet={selectedBet}
-                      onSelect={handleOddsSelect}
-                    />
-                    <OddsCell
-                      matchId={match.id}
-                      selectionName="Draw"
-                      odds={match.odds.draw}
-                      selectedBet={selectedBet}
-                      onSelect={handleOddsSelect}
-                    />
-                    <OddsCell
-                      matchId={match.id}
-                      selectionName={match.team2}
-                      odds={match.odds.team2}
-                      selectedBet={selectedBet}
-                      onSelect={handleOddsSelect}
-                    />
+
+                    {/* THREE ODDS CELLS WRAPPER */}
+                    {/* CHANGED: Placed min-w-max on the mobile container grid so cells respect their sizing floors */}
+                    <div className="grid grid-cols-3 md:grid-cols-[repeat(3,minmax(96px,1fr))] gap-1 w-full">
+                      <OddsCell
+                        matchId={match.id}
+                        selectionName={match.team1}
+                        odds={match.odds.team1}
+                        selectedBet={selectedBet}
+                        onSelect={handleOddsSelect}
+                      />
+                      <OddsCell
+                        matchId={match.id}
+                        selectionName="Draw"
+                        odds={match.odds.draw}
+                        selectedBet={selectedBet}
+                        onSelect={handleOddsSelect}
+                      />
+                      <OddsCell
+                        matchId={match.id}
+                        selectionName={match.team2}
+                        odds={match.odds.team2}
+                        selectedBet={selectedBet}
+                        onSelect={handleOddsSelect}
+                      />
+                    </div>
                   </tr>
                   {selectedBet?.matchId === match.id && (
                     <BetSlipRow
@@ -133,30 +142,32 @@ const BettingTables = () => {
       {/* Soccer Table */}
       <div className="rounded-none shadow-lg overflow-hidden">
         <div className="flex items-center justify-between bg-[#18adc5] text-white px-2 py-1">
-          <h2 className="text-base font-bold">Soccer</h2>
+          <h2 className="text-sm md:text-base font-bold">Soccer</h2>
           <Link
             to="/soccer"
-            className="flex items-center text-xs hover:text-black font-semibold transition"
+            className="flex items-center text-sm md:text-base hover:text-black font-semibold transition"
           >
             View More
             <ChevronRight size={14} className="ml-1" />
           </Link>
         </div>
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
-            <thead className="text-xs uppercase border-b">
+        <div className="overflow-x-auto scrollbar-hide">
+          <table className="w-full text-left text-sm block sm:table">
+            <thead className="hidden sm:table-header-group text-xs uppercase border-b">
               <tr>
                 <th className="px-2 py-1"></th>
-                <th className="px-2 py-1 text-center w-24">1</th>
-                <th className="px-2 py-1 text-center w-24">X</th>
-                <th className="px-2 py-1 text-center w-24">2</th>
+                <div className="grid grid-cols-[repeat(3,minmax(96px,1fr))] gap-1 w-full">
+                  <th className="px-2 py-1 text-center w-24">1</th>
+                  <th className="px-2 py-1 text-center w-24">X</th>
+                  <th className="px-2 py-1 text-center w-24">2</th>
+                </div>
               </tr>
             </thead>
-            <tbody className="divide-y">
+            <tbody className="divide-y block sm:table-row-group">
               {matchesData.soccer.map((match) => (
                 <React.Fragment key={match.id}>
-                  <tr className="transition">
-                    <td className="px-2 py-1">
+                  <tr className="flex flex-col sm:table-row p-2 sm:p-0 bg-transparent transition">
+                    <td className="block sm:table-cell px-1 pt-1 md:pb-1 w-full">
                       <div className="text-xs mb-0.5 flex items-center gap-2">
                         <span>
                           {match.date} | {match.league}
@@ -170,31 +181,36 @@ const BettingTables = () => {
                           </span>
                         )}
                       </div>
-                      <div className="font-semibold">
+                      <div className="font-semibold text-sm">
                         {match.team1} v {match.team2}
                       </div>
                     </td>
-                    <OddsCell
-                      matchId={match.id}
-                      selectionName={match.team1}
-                      odds={match.odds.team1}
-                      selectedBet={selectedBet}
-                      onSelect={handleOddsSelect}
-                    />
-                    <OddsCell
-                      matchId={match.id}
-                      selectionName="Draw"
-                      odds={match.odds.draw}
-                      selectedBet={selectedBet}
-                      onSelect={handleOddsSelect}
-                    />
-                    <OddsCell
-                      matchId={match.id}
-                      selectionName={match.team2}
-                      odds={match.odds.team2}
-                      selectedBet={selectedBet}
-                      onSelect={handleOddsSelect}
-                    />
+
+                    {/* THREE ODDS CELLS WRAPPER */}
+                    {/* CHANGED: Placed min-w-max on the mobile container grid so cells respect their sizing floors */}
+                    <div className="grid grid-cols-3 md:grid-cols-[repeat(3,minmax(96px,1fr))] gap-1 w-full">
+                      <OddsCell
+                        matchId={match.id}
+                        selectionName={match.team1}
+                        odds={match.odds.team1}
+                        selectedBet={selectedBet}
+                        onSelect={handleOddsSelect}
+                      />
+                      <OddsCell
+                        matchId={match.id}
+                        selectionName="Draw"
+                        odds={match.odds.draw}
+                        selectedBet={selectedBet}
+                        onSelect={handleOddsSelect}
+                      />
+                      <OddsCell
+                        matchId={match.id}
+                        selectionName={match.team2}
+                        odds={match.odds.team2}
+                        selectedBet={selectedBet}
+                        onSelect={handleOddsSelect}
+                      />
+                    </div>
                   </tr>
                   {selectedBet?.matchId === match.id && (
                     <BetSlipRow
@@ -219,30 +235,32 @@ const BettingTables = () => {
       {/* Tennis Table — 3-column (1 / X / 2) even though tennis has no draw */}
       <div className="rounded-none shadow-lg overflow-hidden">
         <div className="flex items-center justify-between bg-[#18adc5] text-white px-2 py-1">
-          <h2 className="text-base font-bold">Tennis</h2>
+          <h2 className="text-sm md:text-base font-bold">Tennis</h2>
           <Link
             to="/tennis"
-            className="flex items-center text-xs hover:text-black font-semibold transition"
+            className="flex items-center text-sm md:text-base hover:text-black font-semibold transition"
           >
             View More
             <ChevronRight size={14} className="ml-1" />
           </Link>
         </div>
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
-            <thead className="text-xs uppercase border-b">
+        <div className="overflow-x-auto scrollbar-hide">
+          <table className="w-full text-left text-sm block sm:table">
+            <thead className="hidden sm:table-header-group text-xs uppercase border-b">
               <tr>
                 <th className="px-2 py-1"></th>
-                <th className="px-2 py-1 text-center w-24">1</th>
-                <th className="px-2 py-1 text-center w-24">X</th>
-                <th className="px-2 py-1 text-center w-24">2</th>
+                <div className="grid grid-cols-[repeat(3,minmax(96px,1fr))] gap-1 w-full">
+                  <th className="px-2 py-1 text-center w-24">1</th>
+                  <th className="px-2 py-1 text-center w-24">X</th>
+                  <th className="px-2 py-1 text-center w-24">2</th>
+                </div>
               </tr>
             </thead>
-            <tbody className="divide-y">
+            <tbody className="divide-y block sm:table-row-group">
               {matchesData.tennis.map((match) => (
                 <React.Fragment key={match.id}>
-                  <tr className="transition">
-                    <td className="px-2 py-1">
+                  <tr className="flex flex-col sm:table-row p-2 sm:p-0 bg-transparent transition">
+                    <td className="block sm:table-cell px-1 pt-1 md:pb-1 w-full">
                       <div className="text-xs mb-0.5 flex items-center gap-2">
                         <span>
                           {match.date} | {match.league}
@@ -256,31 +274,36 @@ const BettingTables = () => {
                           </span>
                         )}
                       </div>
-                      <div className="font-semibold">
+                      <div className="font-semibold text-sm">
                         {match.team1} v {match.team2}
                       </div>
                     </td>
-                    <OddsCell
-                      matchId={match.id}
-                      selectionName={match.team1}
-                      odds={match.odds.team1}
-                      selectedBet={selectedBet}
-                      onSelect={handleOddsSelect}
-                    />
-                    <OddsCell
-                      matchId={match.id}
-                      selectionName="Draw"
-                      odds={match.odds.draw}
-                      selectedBet={selectedBet}
-                      onSelect={handleOddsSelect}
-                    />
-                    <OddsCell
-                      matchId={match.id}
-                      selectionName={match.team2}
-                      odds={match.odds.team2}
-                      selectedBet={selectedBet}
-                      onSelect={handleOddsSelect}
-                    />
+
+                    {/* THREE ODDS CELLS WRAPPER */}
+                    {/* CHANGED: Placed min-w-max on the mobile container grid so cells respect their sizing floors */}
+                    <div className="grid grid-cols-3 md:grid-cols-[repeat(3,minmax(96px,1fr))] gap-1 w-full">
+                      <OddsCell
+                        matchId={match.id}
+                        selectionName={match.team1}
+                        odds={match.odds.team1}
+                        selectedBet={selectedBet}
+                        onSelect={handleOddsSelect}
+                      />
+                      <OddsCell
+                        matchId={match.id}
+                        selectionName="Draw"
+                        odds={match.odds.draw}
+                        selectedBet={selectedBet}
+                        onSelect={handleOddsSelect}
+                      />
+                      <OddsCell
+                        matchId={match.id}
+                        selectionName={match.team2}
+                        odds={match.odds.team2}
+                        selectedBet={selectedBet}
+                        onSelect={handleOddsSelect}
+                      />
+                    </div>
                   </tr>
                   {selectedBet?.matchId === match.id && (
                     <BetSlipRow
